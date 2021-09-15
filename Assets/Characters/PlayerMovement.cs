@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     float gravityScale = 1.0f;
     Rigidbody2D r2d;
 
+    Collider2D lastTouchedCollider;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.Z) && isGrounded)
         {
             verticalDirection = 1;
-            r2d.AddForce(Vector2.up * 50.0f);
+            r2d.AddForce(Vector2.up * 10.0f);
         }
     }
 
@@ -59,13 +61,26 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        isGrounded = true;
-        Debug.Log("grounded");
+        if (other.tag == "Ground")
+        {
+            isGrounded = true;
+            Debug.Log("grounded");
+        }
+
+        lastTouchedCollider = other;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        isGrounded = false;
-        Debug.Log("not grounded");
+        if (lastTouchedCollider != null)
+        {
+            if (isGrounded && lastTouchedCollider.tag == "Ground")
+            {
+                isGrounded = false;
+                Debug.Log("not grounded");
+            }
+
+            lastTouchedCollider = null;
+        }
     }
 }
