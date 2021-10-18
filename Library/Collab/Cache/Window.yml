@@ -14,11 +14,171 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
+    - Assets/Animations.meta
+    - Assets/Animations/SceneTransition.controller
+    - Assets/Animations/SceneTransition.controller.meta
+    - Assets/Animations/SceneTransitionFadeIn.anim
+    - Assets/Animations/SceneTransitionFadeIn.anim.meta
+    - Assets/Animations/SceneTransitionFadeOut.anim
+    - Assets/Animations/SceneTransitionFadeOut.anim.meta
+    - Assets/Characters/PlayerMovement.cs
+    - Assets/Characters/PlayerMovement.cs.meta
+    - Assets/Characters/Samus_Right_Idle_Test.png.meta
+    - Assets/Prefabs.meta
+    - Assets/Prefabs/Brinstar_Tiles.prefab
+    - Assets/Prefabs/Brinstar_Tiles.prefab.meta
+    - Assets/Prefabs/Main Camera X Locked.prefab
+    - Assets/Prefabs/Main Camera X Locked.prefab.meta
+    - Assets/Prefabs/Main Camera Y Locked.prefab
+    - Assets/Prefabs/Main Camera Y Locked.prefab.meta
+    - Assets/Prefabs/Player.prefab
+    - Assets/Prefabs/Player.prefab.meta
+    - Assets/Scenes/Brinstar.meta
+    - Assets/Scenes/Brinstar/BrinstarEntrance.unity
+    - Assets/Scenes/Brinstar/BrinstarEntrance.unity.meta
+    - Assets/Scenes/Brinstar/BrinstarLongHallway.unity
+    - Assets/Scenes/Brinstar/BrinstarLongHallway.unity.meta
+    - Assets/Scenes/Brinstar/BrinstarSecondRoom.unity
+    - Assets/Scenes/Brinstar/BrinstarSecondRoom.unity.meta
+    - Assets/Scripts.meta
+    - Assets/Scripts/CameraLockedX.cs
+    - Assets/Scripts/CameraLockedX.cs.meta
+    - Assets/Scripts/CameraLockedY.cs
+    - Assets/Scripts/CameraLockedY.cs.meta
+    - Assets/Scripts/LoadScene.cs
+    - Assets/Scripts/LoadScene.cs.meta
+    - Assets/Scripts/PlayerMovement.cs
+    - Assets/Scripts/PlayerMovement.cs.meta
+    - Assets/Scripts/SceneTracker.cs
+    - Assets/Scripts/SceneTracker.cs.meta
+    - Assets/Sprites/Environments.meta
+    - Assets/Sprites/Environments/block1.png
+    - Assets/Sprites/Environments/block1.png.meta
+    - Assets/Sprites/Environments/block2.png
+    - Assets/Sprites/Environments/block2.png.meta
+    - Assets/Sprites/Environments/block3.png
+    - Assets/Sprites/Environments/block3.png.meta
+    - Assets/Sprites/Environments/block4.png
+    - Assets/Sprites/Environments/block4.png.meta
+    - Assets/Sprites/Environments/block5.png
+    - Assets/Sprites/Environments/block5.png.meta
+    - Assets/Sprites/Environments/blue_ground 1.png
+    - Assets/Sprites/Environments/blue_ground 1.png.meta
+    - Assets/Sprites/Environments/blue_ground.png
+    - Assets/Sprites/Environments/blue_ground.png.meta
+    - Assets/Sprites/Environments/brinstar.meta
+    - Assets/Sprites/Environments/brinstar/angryhead.asset
+    - Assets/Sprites/Environments/brinstar/angryhead.asset.meta
+    - Assets/Sprites/Environments/brinstar/angryhead.png
+    - Assets/Sprites/Environments/brinstar/angryhead.png.meta
+    - Assets/Sprites/Environments/brinstar/bigstarthing.asset
+    - Assets/Sprites/Environments/brinstar/bigstarthing.asset.meta
+    - Assets/Sprites/Environments/brinstar/bigstarthing.png
+    - Assets/Sprites/Environments/brinstar/bigstarthing.png.meta
+    - Assets/Sprites/Environments/brinstar/block1.asset
+    - Assets/Sprites/Environments/brinstar/block1.asset.meta
+    - Assets/Sprites/Environments/brinstar/block1.png
+    - Assets/Sprites/Environments/brinstar/block1.png.meta
+    - Assets/Sprites/Environments/brinstar/block2.asset
+    - Assets/Sprites/Environments/brinstar/block2.asset.meta
+    - Assets/Sprites/Environments/brinstar/block2.png
+    - Assets/Sprites/Environments/brinstar/block2.png.meta
+    - Assets/Sprites/Environments/brinstar/damagedblock.asset
+    - Assets/Sprites/Environments/brinstar/damagedblock.asset.meta
+    - Assets/Sprites/Environments/brinstar/damagedblock.png
+    - Assets/Sprites/Environments/brinstar/damagedblock.png.meta
+    - Assets/Sprites/Environments/brinstar/doorframe.asset
+    - Assets/Sprites/Environments/brinstar/doorframe.asset.meta
+    - Assets/Sprites/Environments/brinstar/doorframe.png
+    - Assets/Sprites/Environments/brinstar/doorframe.png.meta
+    - Assets/Sprites/Environments/brinstar/metalblock.asset
+    - Assets/Sprites/Environments/brinstar/metalblock.asset.meta
+    - Assets/Sprites/Environments/brinstar/metalblock.png
+    - Assets/Sprites/Environments/brinstar/metalblock.png.meta
+    - Assets/Sprites/Environments/brinstar/pipe.asset
+    - Assets/Sprites/Environments/brinstar/pipe.asset.meta
+    - Assets/Sprites/Environments/brinstar/pipe.png
+    - Assets/Sprites/Environments/brinstar/pipe.png.meta
+    - Assets/Sprites/Environments/brinstar/pipe1.asset
+    - Assets/Sprites/Environments/brinstar/pipe1.asset.meta
+    - Assets/Sprites/Environments/brinstar/pipe1.png
+    - Assets/Sprites/Environments/brinstar/pipe1.png.meta
+    - Assets/Sprites/Environments/brinstar/pipe2.asset
+    - Assets/Sprites/Environments/brinstar/pipe2.asset.meta
+    - Assets/Sprites/Environments/brinstar/pipe2.png
+    - Assets/Sprites/Environments/brinstar/pipe2.png.meta
+    - Assets/Sprites/Environments/brinstar/pipeup.asset
+    - Assets/Sprites/Environments/brinstar/pipeup.asset.meta
+    - Assets/Sprites/Environments/brinstar/pipeup.png
+    - Assets/Sprites/Environments/brinstar/pipeup.png.meta
+    - Assets/Sprites/Environments/brinstar/starthing.asset
+    - Assets/Sprites/Environments/brinstar/starthing.asset.meta
+    - Assets/Sprites/Environments/brinstar/starthing.png
+    - Assets/Sprites/Environments/brinstar/starthing.png.meta
+    - Assets/Sprites/Environments/brinstar/triangleleft.asset
+    - Assets/Sprites/Environments/brinstar/triangleleft.asset.meta
+    - Assets/Sprites/Environments/brinstar/triangleleft.png
+    - Assets/Sprites/Environments/brinstar/triangleleft.png.meta
+    - Assets/Sprites/Environments/brinstar/triangleright.asset
+    - Assets/Sprites/Environments/brinstar/triangleright.asset.meta
+    - Assets/Sprites/Environments/brinstar/triangleright.png
+    - Assets/Sprites/Environments/brinstar/triangleright.png.meta
+    - Assets/Sprites/Environments/brinstar_ground 1.png
+    - Assets/Sprites/Environments/brinstar_ground 1.png.meta
+    - Assets/Sprites/Environments/brinstar_ground.png
+    - Assets/Sprites/Environments/brinstar_ground.png.meta
+    - Assets/Sprites/Environments/gray_ground 1.jpg
+    - Assets/Sprites/Environments/gray_ground 1.jpg.meta
+    - Assets/Sprites/Environments/gray_ground.jpg
+    - Assets/Sprites/Environments/gray_ground.jpg.meta
+    - Assets/Sprites/Environments/green_ground.jpg
+    - Assets/Sprites/Environments/green_ground.jpg.meta
+    - Assets/Sprites/Environments/green_ground.png
+    - Assets/Sprites/Environments/green_ground.png.meta
+    - Assets/Sprites/Environments/hazards.meta
+    - Assets/Sprites/Environments/hazards/crumbling_block.png
+    - Assets/Sprites/Environments/hazards/crumbling_block.png.meta
+    - Assets/Sprites/Environments/hazards/crumbling_block2.png
+    - Assets/Sprites/Environments/hazards/crumbling_block2.png.meta
+    - Assets/Sprites/Environments/hazards/crumbling_block3.png
+    - Assets/Sprites/Environments/hazards/crumbling_block3.png.meta
+    - Assets/Sprites/Environments/hazards/crumbling_block4.png
+    - Assets/Sprites/Environments/hazards/crumbling_block4.png.meta
+    - Assets/Sprites/Environments/hazards/lava.png
+    - Assets/Sprites/Environments/hazards/lava.png.meta
+    - Assets/Sprites/Environments/hazards/lava2.png
+    - Assets/Sprites/Environments/hazards/lava2.png.meta
+    - Assets/Sprites/Environments/hazards/lava3.png
+    - Assets/Sprites/Environments/hazards/lava3.png.meta
+    - Assets/Sprites/Environments/hazards/quick_sand.png
+    - Assets/Sprites/Environments/hazards/quick_sand.png.meta
+    - Assets/Sprites/Environments/hazards/quick_sand2.png
+    - Assets/Sprites/Environments/hazards/quick_sand2.png.meta
+    - Assets/Sprites/Environments/hideout.meta
+    - Assets/Sprites/Environments/hideout/ground1.png
+    - Assets/Sprites/Environments/hideout/ground1.png.meta
+    - Assets/Sprites/Environments/hideout/ground2.png
+    - Assets/Sprites/Environments/hideout/ground2.png.meta
+    - Assets/Sprites/Environments/norfair.meta
+    - Assets/Sprites/Environments/norfair/cieling.png
+    - Assets/Sprites/Environments/norfair/cieling.png.meta
+    - Assets/Sprites/Environments/norfair/ground1.png
+    - Assets/Sprites/Environments/norfair/ground1.png.meta
+    - Assets/Sprites/Environments/norfair/ground2.png
+    - Assets/Sprites/Environments/norfair/ground2.png.meta
+    - Assets/Sprites/Environments/norfair/ground3.png
+    - Assets/Sprites/Environments/norfair/ground3.png.meta
+    - Assets/Tiles.meta
+    - Assets/Tiles/Brinstar_Palette.prefab
+    - Assets/Tiles/Brinstar_Palette.prefab.meta
     - Packages/manifest.json
     - Packages/packages-lock.json
+    - ProjectSettings/EditorBuildSettings.asset
+    - ProjectSettings/GraphicsSettings.asset
     - ProjectSettings/ProjectVersion.txt
+    - ProjectSettings/TagManager.asset
     - 
-    m_Values: 00000000
+    m_Values: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 

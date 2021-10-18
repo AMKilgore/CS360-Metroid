@@ -5,20 +5,21 @@ using UnityEngine;
 public class CameraLockedY : MonoBehaviour
 {
     private float yPos;
+    private GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
         Transform cameraPos = gameObject.GetComponent(typeof(Transform)) as Transform;
+        player = GameObject.Find("Player");
         yPos = cameraPos.position.y;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Transform playerPos = gameObject.GetComponentInParent(typeof(Transform)) as Transform;
         //this.transform.position = new Vector3(playerPos.position.x, 1.61f, -10.0f);
-        this.transform.position = new Vector3(playerPos.position.x, yPos, -10.0f);
+        this.transform.position = new Vector3(player.transform.position.x, yPos, -10.0f);
     }
 
     private void LateUpdate()

@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/BrinstarEntrance.unity
+    path: Assets/Scenes/Brinstar/BrinstarEntrance.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Brinstar/BrinstarSecondRoom.unity
+    guid: e315cc470ce5f7746994e11ec2acba40
+  - enabled: 1
+    path: Assets/Scenes/Brinstar/BrinstarLongHallway.unity
+    guid: 4fe93555c3a37f346b69911abc70d930
   m_configObjects: {}
