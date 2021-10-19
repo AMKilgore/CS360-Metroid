@@ -83,6 +83,30 @@ public class SceneTracker : MonoBehaviour
             case "BrinstarLongHallway":
                 adjacentScenes.Add("leftDoor", "BrinstarSecondRoom");
                 spawnPoints.Add("leftDoor", new Vector2(11.21f, 5.13f));
+                adjacentScenes.Add("rightDoor", "BrinstarTower");
+                spawnPoints.Add("rightDoor", new Vector2(-0.5f, -54.86f));
+                break;
+            case "BrinstarTower":
+                adjacentScenes.Add("bottomLeftDoor", "BrinstarLongHallway");
+                spawnPoints.Add("bottomLeftDoor", new Vector2(56.04f, -0.95f));
+                adjacentScenes.Add("middleLeftDoor", "LongBeamHallway");
+                spawnPoints.Add("middleLeftDoor", new Vector2(56.09f, -0.95f));
+                adjacentScenes.Add("topLeftDoor", "UpperLongHallway");
+                spawnPoints.Add("topLeftDoor", new Vector2(56.09f, -0.95f));
+                break;
+            case "LongBeamHallway":
+                adjacentScenes.Add("rightDoor", "BrinstarTower");
+                spawnPoints.Add("rightDoor", new Vector2(-0.96f, 80.06f));
+                adjacentScenes.Add("leftDoor", "LongBeamRoom");
+                spawnPoints.Add("leftDoor", new Vector2(56.09f, -0.95f));
+                break;
+            case "LongBeamRoom":
+                adjacentScenes.Add("rightDoor", "LongBeamHallway");
+                spawnPoints.Add("rightDoor", new Vector2(3.88f, -0.95f));
+                break;
+            case "UpperLongHallway":
+                adjacentScenes.Add("rightDoor", "BrinstarTower");
+                spawnPoints.Add("rightDoor", new Vector2(-0.96f, 125f));
                 break;
             default:
                 Debug.Log("There isn't a map to load.");

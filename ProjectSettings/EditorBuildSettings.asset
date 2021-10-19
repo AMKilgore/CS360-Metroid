@@ -14,4 +14,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Brinstar/BrinstarLongHallway.unity
     guid: 4fe93555c3a37f346b69911abc70d930
+  - enabled: 1
+    path: Assets/Scenes/Brinstar/BrinstarTower.unity
+    guid: b5d51dda673ee1b409715d320f72a674
+  - enabled: 1
+    path: Assets/Scenes/Brinstar/LongBeamHallway.unity
+    guid: 98bd6e17742cb2e419118864dc6fdce1
+  - enabled: 1
+    path: Assets/Scenes/Brinstar/LongBeamRoom.unity
+    guid: 07609f3869a10174a9a5a9c1aa314abe
+  - enabled: 1
+    path: Assets/Scenes/Brinstar/UpperLongHallway.unity
+    guid: 6856ccc757bc5274eaf9af277631857b
   m_configObjects: {}
