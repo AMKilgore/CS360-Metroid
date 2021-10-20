@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public Animator animator;
+
     public float horizontalSpeed = 3.4f;
     public float verticalSpeed = 50.0f;
     public bool isGrounded = true;
@@ -19,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         r2d = GetComponent<Rigidbody2D>();
         r2d.freezeRotation = true;
         r2d.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
@@ -48,15 +51,13 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Calculate movement velocity
-        //$$ 0 is a placeholder on the y axis movement
-        //r2d.velocity = new Vector2((horizontalDirection) * horizontalSpeed, 0);
-        //r2d.MovePosition(new Vector2((horizontalDirection * horizontalSpeed * Time.deltaTime) + r2d.position.x,
-        //    (verticalDirection * verticalSpeed * Time.deltaTime/4) + r2d.position.y));
-
-        //r2d.MovePosition(new Vector2((horizontalDirection * horizontalSpeed * Time.deltaTime) + r2d.position.x,
-        //    r2d.position.y));
         r2d.transform.Translate(Vector2.right * horizontalDirection * horizontalSpeed * Time.deltaTime);
+        // Right walk animation
+        if (horizontalDirection == 1)
+        {
+            animator.ResetTrigger("Walk");
+            animator.SetTrigger("Walk");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
