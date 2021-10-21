@@ -15,24 +15,43 @@ MonoBehaviour:
   SimpleSelectedItems:
     m_Keys:
     - Assets/Animations.meta
+    - Assets/Animations/Player.meta
+    - Assets/Animations/Player/PlayerAnimations.controller
+    - Assets/Animations/Player/PlayerAnimations.controller.meta
+    - Assets/Animations/Player/PlayerFlipJumpRight.anim
+    - Assets/Animations/Player/PlayerFlipJumpRight.anim.meta
+    - Assets/Animations/Player/PlayerIdle.anim
+    - Assets/Animations/Player/PlayerIdle.anim.meta
+    - Assets/Animations/Player/PlayerIdleLeft.anim
+    - Assets/Animations/Player/PlayerIdleLeft.anim.meta
+    - Assets/Animations/Player/PlayerWalk.anim
+    - Assets/Animations/Player/PlayerWalk.anim.meta
+    - Assets/Animations/Player/PlayerWalkLeft.anim
+    - Assets/Animations/Player/PlayerWalkLeft.anim.meta
     - Assets/Animations/SceneTransition.controller
     - Assets/Animations/SceneTransition.controller.meta
     - Assets/Animations/SceneTransitionFadeIn.anim
     - Assets/Animations/SceneTransitionFadeIn.anim.meta
     - Assets/Animations/SceneTransitionFadeOut.anim
     - Assets/Animations/SceneTransitionFadeOut.anim.meta
+    - Assets/Characters.meta
     - Assets/Characters/PlayerMovement.cs
     - Assets/Characters/PlayerMovement.cs.meta
+    - Assets/Characters/Samus_Right_Idle_Test.png
     - Assets/Characters/Samus_Right_Idle_Test.png.meta
     - Assets/Prefabs.meta
     - Assets/Prefabs/Brinstar_Tiles.prefab
     - Assets/Prefabs/Brinstar_Tiles.prefab.meta
+    - Assets/Prefabs/Door.prefab
+    - Assets/Prefabs/Door.prefab.meta
     - Assets/Prefabs/Main Camera X Locked.prefab
     - Assets/Prefabs/Main Camera X Locked.prefab.meta
     - Assets/Prefabs/Main Camera Y Locked.prefab
     - Assets/Prefabs/Main Camera Y Locked.prefab.meta
     - Assets/Prefabs/Player.prefab
     - Assets/Prefabs/Player.prefab.meta
+    - Assets/Prefabs/SceneTransition.prefab
+    - Assets/Prefabs/SceneTransition.prefab.meta
     - Assets/Scenes/Brinstar.meta
     - Assets/Scenes/Brinstar/BrinstarEntrance.unity
     - Assets/Scenes/Brinstar/BrinstarEntrance.unity.meta
@@ -40,11 +59,21 @@ MonoBehaviour:
     - Assets/Scenes/Brinstar/BrinstarLongHallway.unity.meta
     - Assets/Scenes/Brinstar/BrinstarSecondRoom.unity
     - Assets/Scenes/Brinstar/BrinstarSecondRoom.unity.meta
+    - Assets/Scenes/Brinstar/BrinstarTower.unity
+    - Assets/Scenes/Brinstar/BrinstarTower.unity.meta
+    - Assets/Scenes/Brinstar/LongBeamHallway.unity
+    - Assets/Scenes/Brinstar/LongBeamHallway.unity.meta
+    - Assets/Scenes/Brinstar/LongBeamRoom.unity
+    - Assets/Scenes/Brinstar/LongBeamRoom.unity.meta
+    - Assets/Scenes/Brinstar/UpperLongHallway.unity
+    - Assets/Scenes/Brinstar/UpperLongHallway.unity.meta
     - Assets/Scripts.meta
     - Assets/Scripts/CameraLockedX.cs
     - Assets/Scripts/CameraLockedX.cs.meta
     - Assets/Scripts/CameraLockedY.cs
     - Assets/Scripts/CameraLockedY.cs.meta
+    - Assets/Scripts/DoorInteract.cs
+    - Assets/Scripts/DoorInteract.cs.meta
     - Assets/Scripts/LoadScene.cs
     - Assets/Scripts/LoadScene.cs.meta
     - Assets/Scripts/PlayerMovement.cs
@@ -52,6 +81,10 @@ MonoBehaviour:
     - Assets/Scripts/SceneTracker.cs
     - Assets/Scripts/SceneTracker.cs.meta
     - Assets/Sprites/Environments.meta
+    - Assets/Sprites/Environments/black.asset
+    - Assets/Sprites/Environments/black.asset.meta
+    - Assets/Sprites/Environments/black.png
+    - Assets/Sprites/Environments/black.png.meta
     - Assets/Sprites/Environments/block1.png
     - Assets/Sprites/Environments/block1.png.meta
     - Assets/Sprites/Environments/block2.png
@@ -83,6 +116,10 @@ MonoBehaviour:
     - Assets/Sprites/Environments/brinstar/block2.asset.meta
     - Assets/Sprites/Environments/brinstar/block2.png
     - Assets/Sprites/Environments/brinstar/block2.png.meta
+    - Assets/Sprites/Environments/brinstar/bluepuff.asset
+    - Assets/Sprites/Environments/brinstar/bluepuff.asset.meta
+    - Assets/Sprites/Environments/brinstar/bluepuff.png
+    - Assets/Sprites/Environments/brinstar/bluepuff.png.meta
     - Assets/Sprites/Environments/brinstar/damagedblock.asset
     - Assets/Sprites/Environments/brinstar/damagedblock.asset.meta
     - Assets/Sprites/Environments/brinstar/damagedblock.png
@@ -91,6 +128,10 @@ MonoBehaviour:
     - Assets/Sprites/Environments/brinstar/doorframe.asset.meta
     - Assets/Sprites/Environments/brinstar/doorframe.png
     - Assets/Sprites/Environments/brinstar/doorframe.png.meta
+    - Assets/Sprites/Environments/brinstar/longBlueBeam.asset
+    - Assets/Sprites/Environments/brinstar/longBlueBeam.asset.meta
+    - Assets/Sprites/Environments/brinstar/longBlueBeam.png
+    - Assets/Sprites/Environments/brinstar/longBlueBeam.png.meta
     - Assets/Sprites/Environments/brinstar/metalblock.asset
     - Assets/Sprites/Environments/brinstar/metalblock.asset.meta
     - Assets/Sprites/Environments/brinstar/metalblock.png
@@ -115,6 +156,10 @@ MonoBehaviour:
     - Assets/Sprites/Environments/brinstar/starthing.asset.meta
     - Assets/Sprites/Environments/brinstar/starthing.png
     - Assets/Sprites/Environments/brinstar/starthing.png.meta
+    - Assets/Sprites/Environments/brinstar/thickbluepipe.asset
+    - Assets/Sprites/Environments/brinstar/thickbluepipe.asset.meta
+    - Assets/Sprites/Environments/brinstar/thickbluepipe.png
+    - Assets/Sprites/Environments/brinstar/thickbluepipe.png.meta
     - Assets/Sprites/Environments/brinstar/triangleleft.asset
     - Assets/Sprites/Environments/brinstar/triangleleft.asset.meta
     - Assets/Sprites/Environments/brinstar/triangleleft.png
@@ -168,9 +213,51 @@ MonoBehaviour:
     - Assets/Sprites/Environments/norfair/ground2.png.meta
     - Assets/Sprites/Environments/norfair/ground3.png
     - Assets/Sprites/Environments/norfair/ground3.png.meta
+    - Assets/Sprites/Hazards.meta
+    - Assets/Sprites/Hazards/lavaBottom.asset
+    - Assets/Sprites/Hazards/lavaBottom.asset.meta
+    - Assets/Sprites/Hazards/lavaBottom.png
+    - Assets/Sprites/Hazards/lavaBottom.png.meta
+    - Assets/Sprites/Hazards/lavaTop.asset
+    - Assets/Sprites/Hazards/lavaTop.asset.meta
+    - Assets/Sprites/Hazards/lavaTop.png
+    - Assets/Sprites/Hazards/lavaTop.png.meta
+    - Assets/Sprites/Player.meta
+    - Assets/Sprites/Player/samusFall.png
+    - Assets/Sprites/Player/samusFall.png.meta
+    - Assets/Sprites/Player/samusIdleLeft.png
+    - Assets/Sprites/Player/samusIdleLeft.png.meta
+    - Assets/Sprites/Player/samusIdleRight.png
+    - Assets/Sprites/Player/samusIdleRight.png.meta
+    - Assets/Sprites/Player/samusJumpFour.png
+    - Assets/Sprites/Player/samusJumpFour.png.meta
+    - Assets/Sprites/Player/samusJumpOne.png
+    - Assets/Sprites/Player/samusJumpOne.png.meta
+    - Assets/Sprites/Player/samusJumpThree.png
+    - Assets/Sprites/Player/samusJumpThree.png.meta
+    - Assets/Sprites/Player/samusJumpTwo.png
+    - Assets/Sprites/Player/samusJumpTwo.png.meta
+    - Assets/Sprites/Player/samusWalkOne.png
+    - Assets/Sprites/Player/samusWalkOne.png.meta
+    - Assets/Sprites/Player/samusWalkOneLeft.png
+    - Assets/Sprites/Player/samusWalkOneLeft.png.meta
+    - Assets/Sprites/Player/samusWalkThree.png
+    - Assets/Sprites/Player/samusWalkThree.png.meta
+    - Assets/Sprites/Player/samusWalkThreeLeft.png
+    - Assets/Sprites/Player/samusWalkThreeLeft.png.meta
+    - Assets/Sprites/Player/samusWalkTwo.png
+    - Assets/Sprites/Player/samusWalkTwo.png.meta
+    - Assets/Sprites/Player/samusWalkTwoLeft.png
+    - Assets/Sprites/Player/samusWalkTwoLeft.png.meta
+    - Assets/Sprites/itemholder.png
+    - Assets/Sprites/itemholder.png.meta
+    - Assets/Sprites/spawnerpipe.png
+    - Assets/Sprites/spawnerpipe.png.meta
     - Assets/Tiles.meta
     - Assets/Tiles/Brinstar_Palette.prefab
     - Assets/Tiles/Brinstar_Palette.prefab.meta
+    - Assets/Tiles/Hazards_Palette.prefab
+    - Assets/Tiles/Hazards_Palette.prefab.meta
     - Packages/manifest.json
     - Packages/packages-lock.json
     - ProjectSettings/EditorBuildSettings.asset
@@ -178,7 +265,7 @@ MonoBehaviour:
     - ProjectSettings/ProjectVersion.txt
     - ProjectSettings/TagManager.asset
     - 
-    m_Values: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    m_Values: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 

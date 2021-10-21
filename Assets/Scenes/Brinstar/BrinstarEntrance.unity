@@ -135,9 +135,9 @@ GameObject:
   - component: {fileID: 396767817}
   - component: {fileID: 396767816}
   - component: {fileID: 396767818}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Brinstar_Tiles
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4973,9 +4973,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7721003523651793621, guid: 52d49d93f0349b840be4ffce20d7c6fe, type: 3}
+      propertyPath: m_Size.y
+      value: 2.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7721003523651793621, guid: 52d49d93f0349b840be4ffce20d7c6fe, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7721003523651793625, guid: 52d49d93f0349b840be4ffce20d7c6fe, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7721003523651793625, guid: 52d49d93f0349b840be4ffce20d7c6fe, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7721003523651793626, guid: 52d49d93f0349b840be4ffce20d7c6fe, type: 3}
       propertyPath: m_RootOrder
@@ -4987,7 +4999,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7721003523651793626, guid: 52d49d93f0349b840be4ffce20d7c6fe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 24.64
+      value: 24.588
       objectReference: {fileID: 0}
     - target: {fileID: 7721003523651793626, guid: 52d49d93f0349b840be4ffce20d7c6fe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5033,9 +5045,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1370275831}
   - component: {fileID: 1370275830}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Grid
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
