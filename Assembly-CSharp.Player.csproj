@@ -62,6 +62,7 @@
     <Compile Include="Assets\Scripts\DoorInteract.cs" />
     <Compile Include="Assets\Scripts\CameraLockedY.cs" />
     <Compile Include="Assets\Scripts\LoadScene.cs" />
+    <Compile Include="Assets\Scripts\NormalProjectilePhysics.cs" />
     <Reference Include="UnityEngine">
       <HintPath>D:/Unity Editors/2020.3.17f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/mono/Managed/UnityEngine.dll</HintPath>
     </Reference>

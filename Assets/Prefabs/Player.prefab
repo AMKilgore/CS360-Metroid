@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7721003523651793621}
   - component: {fileID: 7721003523651793620}
   - component: {fileID: 6320782787666125188}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,6 +149,7 @@ MonoBehaviour:
   horizontalSpeed: 3.4
   verticalSpeed: 50
   isGrounded: 1
+  normalShot: {fileID: 0}
 --- !u!95 &6320782787666125188
 Animator:
   serializedVersion: 3

@@ -17,6 +17,9 @@ public class PlayerMovement : MonoBehaviour
     float verticalDirection;
     float gravityScale = 1.0f;
 
+    // Shot types
+    public GameObject normalShot;
+
     Rigidbody2D r2d;
 
     // Start is called before the first frame update
@@ -48,6 +51,13 @@ public class PlayerMovement : MonoBehaviour
         {
             horizontalDirection = 0;
         }
+
+        // Fire the weapon if the player is grounded
+        if (Input.GetKey(KeyCode.X) && isGrounded)
+        {
+            Fire();
+        }
+
 
         // Move horizontally
         r2d.transform.Translate(Vector2.right * horizontalDirection * horizontalSpeed * Time.deltaTime);
@@ -86,11 +96,21 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("IsJumping", true);
             isGrounded = false;
         }
+        // Ground has been hit
         else if (!isGrounded && r2d.velocity.y == 0)
         {
             isGrounded = true;
             animator.SetBool("IsJumping", false);
         }
-           
+    }
+
+    void Fire()
+    {
+        //$$ Add implementation for the different shot types here, use switches?
+        float d = animator.GetFloat("Direction");
+        GameObject ns = Instantiate(normalShot, r2d.position + (Vector2.up * 0.40f) + (Vector2.right * d * 0.5f), Quaternion.identity);
+        NormalProjectilePhysics nsPhys = ns.GetComponent<NormalProjectilePhysics>();
+
+        nsPhys.Fire(d);
     }
 }
