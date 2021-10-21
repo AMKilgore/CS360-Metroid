@@ -18,20 +18,12 @@ public class PlayerMovement : MonoBehaviour
     float gravityScale = 1.0f;
 
     Rigidbody2D r2d;
-    BoxCollider2D boxCollider2D;
-    Collider2D lastTouchedCollider;
-
-    private Tilemap tilemap;
-    TilemapCollider2D a;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         r2d = GetComponent<Rigidbody2D>();
-        boxCollider2D = GetComponent<BoxCollider2D>();
-
-        a = GameObject.Find("Brinstar_Tiles").GetComponent<TilemapCollider2D>();
 
         r2d.freezeRotation = true;
         r2d.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
@@ -41,93 +33,64 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+    }
+
+    void FixedUpdate()
+    {
         // Horizontal movement, -1 indicates a left movement, 1 indicates a right movement
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
         {
             horizontalDirection = Input.GetKey(KeyCode.LeftArrow) ? -1 : 1;
-            playerFacing = 0;
+            animator.SetFloat("Direction", horizontalDirection);
         }
         else
         {
-            if (horizontalDirection != 0)
-                playerFacing = horizontalDirection;
             horizontalDirection = 0;
         }
 
+        // Move horizontally
+        r2d.transform.Translate(Vector2.right * horizontalDirection * horizontalSpeed * Time.deltaTime);
+
+        // Set the walking animation
+        if (horizontalDirection != 0 && isGrounded)
+        {
+            animator.SetFloat("Move X", horizontalDirection);
+            animator.SetBool("IsMoving", true);
+        }
+        // Standing still on the ground
+        else if (horizontalDirection == 0 && isGrounded)
+        {
+            animator.SetBool("IsMoving", false);
+        }
 
         // Vertical movement
         if (Input.GetKey(KeyCode.Z) && isGrounded)
         {
             verticalDirection = 1;
-            r2d.AddForce(Vector2.up * 10.0f);
-            
-        }
-        else if (isGrounded)
-        {
-            verticalDirection = 0;
+            r2d.AddForce(Vector2.up * 300.0f);
         }
 
-        Debug.Log(isGroundedTest());
-    }
-
-    void FixedUpdate()
-    {
-        if (horizontalDirection != 0)
+        // Logic for playing any jumping animations
+        if (r2d.velocity.y != 0 && isGrounded)
         {
-            animator.SetFloat("Move X", horizontalDirection);
-            animator.SetBool("IsMoving", true);
-            
-            r2d.transform.Translate(Vector2.right * horizontalDirection * horizontalSpeed * Time.deltaTime);
-        }
-        else
-        {
-            animator.SetFloat("Direction", playerFacing);
-            animator.SetBool("IsMoving", false);
-        }
-
-        if (verticalDirection != 0)
-        {
+            // Falling
+            if (r2d.velocity.y < 0 || horizontalDirection == 0)
+            {
+                if (animator.GetFloat("Direction") == 1)
+                    animator.SetFloat("Move X", 0.3f);
+                else
+                    animator.SetFloat("Move X", -0.3f);
+            }
+            // Activate the jump animation
             animator.SetBool("IsJumping", true);
+            isGrounded = false;
         }
-        else
-        {
-            animator.SetBool("IsJumping", false);
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "Ground")
+        else if (!isGrounded && r2d.velocity.y == 0)
         {
             isGrounded = true;
+            animator.SetBool("IsJumping", false);
         }
-
-        lastTouchedCollider = other;
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (lastTouchedCollider != null)
-        {
-            if (isGrounded && lastTouchedCollider.tag == "Ground")
-            {
-                isGrounded = false;
-                Debug.Log("not grounded");
-            }
-
-            lastTouchedCollider = null;
-        }
-    }
-
-    private bool isGroundedTest()
-    {
-        RaycastHit2D rh = Physics2D.Raycast(transform.position, Vector2.down, transform.position.y + 0.1f, 10);
-        RaycastHit2D[] l = new RaycastHit2D[1];
-        ContactFilter2D cf = new ContactFilter2D();
-        int c = a.Raycast(Vector2.up, l, 0.5f);
-        Debug.Log(c);
-        Debug.Log(rh.collider);
-
-        return Physics2D.Raycast(boxCollider2D.bounds.center, Vector2.down, boxCollider2D.bounds.extents.y + 0.1f, 10);
+           
     }
 }
