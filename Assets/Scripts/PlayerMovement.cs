@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     public float verticalSpeed = 50.0f;
     public bool isGrounded = true;
     float horizontalDirection;
+    float playerFacing;
+    float speed;
     float verticalDirection;
     float gravityScale = 1.0f;
     Rigidbody2D r2d;
@@ -35,11 +37,21 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
         {
             horizontalDirection = Input.GetKey(KeyCode.LeftArrow) ? -1 : 1;
+            playerFacing = 0;
         }
         else
         {
+            if (horizontalDirection != 0)
+                playerFacing = horizontalDirection;
             horizontalDirection = 0;
         }
+
+        /*
+        if (horizontalDirection != 0)
+        {
+            playerFacing = horizontalDirection;
+        }
+        */
 
         // Vertical movement
         if (Input.GetKey(KeyCode.Z) && isGrounded)
@@ -51,12 +63,17 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        r2d.transform.Translate(Vector2.right * horizontalDirection * horizontalSpeed * Time.deltaTime);
-        // Right walk animation
-        if (horizontalDirection == 1)
+        if (horizontalDirection != 0)
         {
-            animator.ResetTrigger("Walk");
-            animator.SetTrigger("Walk");
+            animator.SetFloat("Move X", horizontalDirection);
+            animator.SetBool("IsMoving", true);
+            
+            r2d.transform.Translate(Vector2.right * horizontalDirection * horizontalSpeed * Time.deltaTime);
+        }
+        else
+        {
+            animator.SetFloat("Direction", playerFacing);
+            animator.SetBool("IsMoving", false);
         }
     }
 
