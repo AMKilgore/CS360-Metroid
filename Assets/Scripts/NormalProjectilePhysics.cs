@@ -6,16 +6,25 @@ public class NormalProjectilePhysics : MonoBehaviour
 {
     Animator animator;
     Rigidbody2D rb2d;
+    bool hasLongBeam = false;
+    Vector3 spawnPosition;
 
     // Start is called before the first frame update
     void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        spawnPosition = transform.position;
+    }
+
+    private void OnDestroy()
+    {
+        FindObjectOfType<PlayerMovement>().numberShots--;
     }
 
     public void Fire(float direction)
     {
+        //$$ Add force for the y-direction if needed
         rb2d.AddForce(Vector2.right * direction * 400.0f);
     }
 
@@ -28,6 +37,13 @@ public class NormalProjectilePhysics : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!hasLongBeam)
+        {
+            // 4 tiles is the default range, add logic for y direction
+            if (Mathf.Abs(transform.position.x - spawnPosition.x) > 4)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }

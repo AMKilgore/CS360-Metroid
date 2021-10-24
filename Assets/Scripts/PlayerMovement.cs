@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
 
     // Shot types
     public GameObject normalShot;
+    public int numberShots = 0;
+    int fireDelay = 0;
 
     Rigidbody2D r2d;
 
@@ -53,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Fire the weapon if the player is grounded
-        if (Input.GetKey(KeyCode.X) && isGrounded)
+        if (Input.GetKey(KeyCode.X) && isGrounded && fireDelay == 5)
         {
             Fire();
         }
@@ -102,6 +104,12 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = true;
             animator.SetBool("IsJumping", false);
         }
+
+        // Delay for the missle firing, if the user holds down the fire button, only allow to fire every five frames
+        if (fireDelay == 5)
+            fireDelay = 0;
+        else
+            ++fireDelay;
     }
 
     void Fire()
@@ -112,5 +120,7 @@ public class PlayerMovement : MonoBehaviour
         NormalProjectilePhysics nsPhys = ns.GetComponent<NormalProjectilePhysics>();
 
         nsPhys.Fire(d);
+        // Add number shots if needed to check 
+        ++numberShots;
     }
 }
