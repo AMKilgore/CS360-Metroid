@@ -18,6 +18,12 @@ MonoBehaviour:
     - Assets/Animations/Player.meta
     - Assets/Animations/Player/PlayerAnimations.controller
     - Assets/Animations/Player/PlayerAnimations.controller.meta
+    - Assets/Animations/Player/PlayerFall.anim
+    - Assets/Animations/Player/PlayerFall.anim.meta
+    - Assets/Animations/Player/PlayerFallLeft.anim
+    - Assets/Animations/Player/PlayerFallLeft.anim.meta
+    - Assets/Animations/Player/PlayerFlipJumpLeft.anim
+    - Assets/Animations/Player/PlayerFlipJumpLeft.anim.meta
     - Assets/Animations/Player/PlayerFlipJumpRight.anim
     - Assets/Animations/Player/PlayerFlipJumpRight.anim.meta
     - Assets/Animations/Player/PlayerIdle.anim
@@ -28,6 +34,13 @@ MonoBehaviour:
     - Assets/Animations/Player/PlayerWalk.anim.meta
     - Assets/Animations/Player/PlayerWalkLeft.anim
     - Assets/Animations/Player/PlayerWalkLeft.anim.meta
+    - Assets/Animations/Player/Projectiles.meta
+    - Assets/Animations/Player/Projectiles/NormalProjectileExplode.anim
+    - Assets/Animations/Player/Projectiles/NormalProjectileExplode.anim.meta
+    - Assets/Animations/Player/Projectiles/NormalProjectileMove.anim
+    - Assets/Animations/Player/Projectiles/NormalProjectileMove.anim.meta
+    - Assets/Animations/Player/Projectiles/normalShot.controller
+    - Assets/Animations/Player/Projectiles/normalShot.controller.meta
     - Assets/Animations/SceneTransition.controller
     - Assets/Animations/SceneTransition.controller.meta
     - Assets/Animations/SceneTransitionFadeIn.anim
@@ -52,6 +65,8 @@ MonoBehaviour:
     - Assets/Prefabs/Player.prefab.meta
     - Assets/Prefabs/SceneTransition.prefab
     - Assets/Prefabs/SceneTransition.prefab.meta
+    - Assets/Prefabs/normalShot.prefab
+    - Assets/Prefabs/normalShot.prefab.meta
     - Assets/Scenes/Brinstar.meta
     - Assets/Scenes/Brinstar/BrinstarEntrance.unity
     - Assets/Scenes/Brinstar/BrinstarEntrance.unity.meta
@@ -74,12 +89,37 @@ MonoBehaviour:
     - Assets/Scripts/CameraLockedY.cs.meta
     - Assets/Scripts/DoorInteract.cs
     - Assets/Scripts/DoorInteract.cs.meta
+    - Assets/Scripts/DoorInteraction.cs
+    - Assets/Scripts/DoorInteraction.cs.meta
     - Assets/Scripts/LoadScene.cs
     - Assets/Scripts/LoadScene.cs.meta
+    - Assets/Scripts/NormalProjectilePhysics.cs
+    - Assets/Scripts/NormalProjectilePhysics.cs.meta
     - Assets/Scripts/PlayerMovement.cs
     - Assets/Scripts/PlayerMovement.cs.meta
     - Assets/Scripts/SceneTracker.cs
     - Assets/Scripts/SceneTracker.cs.meta
+    - Assets/Sprites/Doors.meta
+    - Assets/Sprites/Doors/closeRed.png
+    - Assets/Sprites/Doors/closeRed.png.meta
+    - Assets/Sprites/Doors/closeRedLeft.png
+    - Assets/Sprites/Doors/closeRedLeft.png.meta
+    - Assets/Sprites/Doors/closedBlue.png
+    - Assets/Sprites/Doors/closedBlue.png.meta
+    - Assets/Sprites/Doors/closedBlueLeft.asset
+    - Assets/Sprites/Doors/closedBlueLeft.asset.meta
+    - Assets/Sprites/Doors/closedBlueLeft.png
+    - Assets/Sprites/Doors/closedBlueLeft.png.meta
+    - Assets/Sprites/Doors/openBlue.png
+    - Assets/Sprites/Doors/openBlue.png.meta
+    - Assets/Sprites/Doors/openBlueLeft.asset
+    - Assets/Sprites/Doors/openBlueLeft.asset.meta
+    - Assets/Sprites/Doors/openBlueLeft.png
+    - Assets/Sprites/Doors/openBlueLeft.png.meta
+    - Assets/Sprites/Doors/openRed.png
+    - Assets/Sprites/Doors/openRed.png.meta
+    - Assets/Sprites/Doors/openRedLeft.png
+    - Assets/Sprites/Doors/openRedLeft.png.meta
     - Assets/Sprites/Environments.meta
     - Assets/Sprites/Environments/black.asset
     - Assets/Sprites/Environments/black.asset.meta
@@ -223,20 +263,35 @@ MonoBehaviour:
     - Assets/Sprites/Hazards/lavaTop.png
     - Assets/Sprites/Hazards/lavaTop.png.meta
     - Assets/Sprites/Player.meta
+    - Assets/Sprites/Player/Projectiles.meta
+    - Assets/Sprites/Player/Projectiles/normalShot.png
+    - Assets/Sprites/Player/Projectiles/normalShot.png.meta
+    - Assets/Sprites/Player/Projectiles/normalShotExplode.png
+    - Assets/Sprites/Player/Projectiles/normalShotExplode.png.meta
     - Assets/Sprites/Player/samusFall.png
     - Assets/Sprites/Player/samusFall.png.meta
+    - Assets/Sprites/Player/samusFallLeft.png
+    - Assets/Sprites/Player/samusFallLeft.png.meta
     - Assets/Sprites/Player/samusIdleLeft.png
     - Assets/Sprites/Player/samusIdleLeft.png.meta
     - Assets/Sprites/Player/samusIdleRight.png
     - Assets/Sprites/Player/samusIdleRight.png.meta
     - Assets/Sprites/Player/samusJumpFour.png
     - Assets/Sprites/Player/samusJumpFour.png.meta
+    - Assets/Sprites/Player/samusJumpFourLeft.png
+    - Assets/Sprites/Player/samusJumpFourLeft.png.meta
     - Assets/Sprites/Player/samusJumpOne.png
     - Assets/Sprites/Player/samusJumpOne.png.meta
+    - Assets/Sprites/Player/samusJumpOneLeft.png
+    - Assets/Sprites/Player/samusJumpOneLeft.png.meta
     - Assets/Sprites/Player/samusJumpThree.png
     - Assets/Sprites/Player/samusJumpThree.png.meta
+    - Assets/Sprites/Player/samusJumpThreeLeft.png
+    - Assets/Sprites/Player/samusJumpThreeLeft.png.meta
     - Assets/Sprites/Player/samusJumpTwo.png
     - Assets/Sprites/Player/samusJumpTwo.png.meta
+    - Assets/Sprites/Player/samusJumpTwoLeft.png
+    - Assets/Sprites/Player/samusJumpTwoLeft.png.meta
     - Assets/Sprites/Player/samusWalkOne.png
     - Assets/Sprites/Player/samusWalkOne.png.meta
     - Assets/Sprites/Player/samusWalkOneLeft.png
@@ -262,10 +317,11 @@ MonoBehaviour:
     - Packages/packages-lock.json
     - ProjectSettings/EditorBuildSettings.asset
     - ProjectSettings/GraphicsSettings.asset
+    - ProjectSettings/Physics2DSettings.asset
     - ProjectSettings/ProjectVersion.txt
     - ProjectSettings/TagManager.asset
     - 
-    m_Values: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    m_Values: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 
