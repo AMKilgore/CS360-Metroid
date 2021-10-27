@@ -32,6 +32,18 @@ public class PlayerMovement : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         r2d = GetComponent<Rigidbody2D>();
+        normalShot = (GameObject)Resources.Load("normalShot", typeof(GameObject));
+        MorphBall = (GameObject)Resources.Load("MorphBall", typeof(GameObject));
+
+        r2d.freezeRotation = true;
+        r2d.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+        r2d.gravityScale = gravityScale;
+    }
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+        r2d = GetComponent<Rigidbody2D>();
 
         r2d.freezeRotation = true;
         r2d.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
@@ -144,7 +156,11 @@ public class PlayerMovement : MonoBehaviour
         //$$ Add implementation for the different shot types here, use switches?
         float d = animator.GetFloat("Direction");
         bool v = animator.GetBool("LookUp");
-        GameObject ns = Instantiate(normalShot, r2d.position + (Vector2.up * 0.40f) + (Vector2.right * d * 0.5f), Quaternion.identity);
+        GameObject ns;
+        if (!v)
+            ns = Instantiate(normalShot, r2d.position + (Vector2.up * 0.40f) + (Vector2.right * d * 0.5f), Quaternion.identity);
+        else
+            ns = Instantiate(normalShot, r2d.position + (Vector2.up * 0.40f) + (Vector2.right * d * 0.3f * 0.45f), Quaternion.identity);
         NormalProjectilePhysics nsPhys = ns.GetComponent<NormalProjectilePhysics>();
 
         nsPhys.Fire(d, v);

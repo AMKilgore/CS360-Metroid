@@ -5613,20 +5613,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4108129034315229890, guid: 8031026490fac3d46bfcbdbbc56cf364, type: 3}
   m_PrefabInstance: {fileID: 4108129035043026060}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4108129035043026062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4108129035043026061}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7be8e9f334f8c804b95d76ed03517ebe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  openType: normalBullett
-  direction: 0
 --- !u!212 &4108129035043026063
 SpriteRenderer:
   m_ObjectHideFlags: 0

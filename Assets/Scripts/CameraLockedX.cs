@@ -18,8 +18,8 @@ public class CameraLockedX : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Transform playerPos = gameObject.GetComponentInParent(typeof(Transform)) as Transform;
-        this.transform.position = new Vector3(xPos, player.transform.position.y, -10.0f);
+        if (player != null)
+            this.transform.position = new Vector3(xPos, player.transform.position.y, -10.0f);
 
         // Look for other items if player is null
         if (player == null)
@@ -28,10 +28,12 @@ public class CameraLockedX : MonoBehaviour
             for (int i = 0; i < go.Length; i++)
             {
                 string n = go[i].name.Split('(')[0];
-                if (n == "MorphBall")
-                    player = go[i] as GameObject;
+                if (n == "MorphBall" || n == "Player")
+                {
+                    player = GameObject.Find(go[i].name);
+                    //Debug.Log(player.name);
+                }
             }
-            player = GameObject.Find("MorphBall");
         }
     }
 

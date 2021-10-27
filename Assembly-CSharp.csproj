@@ -61,10 +61,10 @@
     <Compile Include="Assets\Scripts\SceneTracker.cs" />
     <Compile Include="Assets\Scripts\DoorInteract.cs" />
     <Compile Include="Assets\Scripts\OpenDoor.cs" />
+    <Compile Include="Assets\Scripts\Player\MorphBallMoves.cs" />
     <Compile Include="Assets\Scripts\CameraLockedY.cs" />
     <Compile Include="Assets\Scripts\LoadScene.cs" />
     <Compile Include="Assets\Scripts\NormalProjectilePhysics.cs" />
-    <Compile Include="Assets\Scripts\Player\MorphBallMoves.cs" />
     <Reference Include="UnityEngine">
       <HintPath>D:/Unity Editors/2020.3.17f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
