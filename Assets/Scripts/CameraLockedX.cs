@@ -20,6 +20,19 @@ public class CameraLockedX : MonoBehaviour
     {
         Transform playerPos = gameObject.GetComponentInParent(typeof(Transform)) as Transform;
         this.transform.position = new Vector3(xPos, player.transform.position.y, -10.0f);
+
+        // Look for other items if player is null
+        if (player == null)
+        {
+            Object[] go = GameObject.FindObjectsOfType(typeof(MonoBehaviour));
+            for (int i = 0; i < go.Length; i++)
+            {
+                string n = go[i].name.Split('(')[0];
+                if (n == "MorphBall")
+                    player = go[i] as GameObject;
+            }
+            player = GameObject.Find("MorphBall");
+        }
     }
 
     private void LateUpdate()

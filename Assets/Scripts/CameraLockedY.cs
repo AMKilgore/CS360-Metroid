@@ -18,8 +18,23 @@ public class CameraLockedY : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //this.transform.position = new Vector3(playerPos.position.x, 1.61f, -10.0f);
-        this.transform.position = new Vector3(player.transform.position.x, yPos, -10.0f);
+        if (player != null)
+            this.transform.position = new Vector3(player.transform.position.x, yPos, -10.0f);
+
+        // Look for other items if player is null
+        if (player == null)
+        {
+            Object[] go = GameObject.FindObjectsOfType(typeof(MonoBehaviour));
+            for (int i = 0; i < go.Length; i++)
+            {
+                string n = go[i].name.Split('(')[0];
+                if (n == "MorphBall" || n == "Player")
+                {
+                    player = GameObject.Find(go[i].name);
+                    //Debug.Log(player.name);
+                }
+            }
+        }
     }
 
     private void LateUpdate()

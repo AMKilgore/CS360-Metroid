@@ -5019,6 +5019,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7721003523651793620, guid: 52d49d93f0349b840be4ffce20d7c6fe, type: 3}
+      propertyPath: MorphBall
+      value: 
+      objectReference: {fileID: 8238304140020750247, guid: d12cede421cd05b429792b425faec489, type: 3}
+    - target: {fileID: 7721003523651793620, guid: 52d49d93f0349b840be4ffce20d7c6fe, type: 3}
       propertyPath: normalShot
       value: 
       objectReference: {fileID: 8317227113478509435, guid: 19a25b81ba461284db00b88db089b7d3, type: 3}
