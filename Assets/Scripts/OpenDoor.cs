@@ -13,7 +13,7 @@ public class OpenDoor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
+        animator = GetComponentInParent<Animator>();
         animator.SetInteger("Direction", direction);
     }
 
@@ -27,7 +27,8 @@ public class OpenDoor : MonoBehaviour
         if (collider == openType)
         {
             animator.SetInteger("OpenType", 1);
-            //Destroy(gameObject);
+            WaitForAnimationToFinish();
+            Destroy(gameObject);
         }
     }
 
@@ -41,6 +42,12 @@ public class OpenDoor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    // Function to wait for animation to finish
+    private IEnumerator WaitForAnimationToFinish()
+    {
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length + animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
     }
 }

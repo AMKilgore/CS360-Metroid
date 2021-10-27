@@ -22,10 +22,13 @@ public class NormalProjectilePhysics : MonoBehaviour
         FindObjectOfType<PlayerMovement>().numberShots--;
     }
 
-    public void Fire(float direction)
+    public void Fire(float direction, bool isUp)
     {
         //$$ Add force for the y-direction if needed
-        rb2d.AddForce(Vector2.right * direction * 400.0f);
+        if (!isUp)
+            rb2d.AddForce(Vector2.right * direction * 400.0f);
+        else
+            rb2d.AddForce(Vector2.up * 400.0f);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

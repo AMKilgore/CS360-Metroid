@@ -15,6 +15,11 @@ MonoBehaviour:
   SimpleSelectedItems:
     m_Keys:
     - Assets/Animations.meta
+    - Assets/Animations/Door.meta
+    - Assets/Animations/Door/Door.controller
+    - Assets/Animations/Door/Door.controller.meta
+    - Assets/Animations/Door/RightBlueOpen.anim
+    - Assets/Animations/Door/RightBlueOpen.anim.meta
     - Assets/Animations/Player.meta
     - Assets/Animations/Player/PlayerAnimations.controller
     - Assets/Animations/Player/PlayerAnimations.controller.meta
@@ -57,6 +62,8 @@ MonoBehaviour:
     - Assets/Prefabs/Brinstar_Tiles.prefab.meta
     - Assets/Prefabs/Door.prefab
     - Assets/Prefabs/Door.prefab.meta
+    - Assets/Prefabs/Door_Cover_Palette.prefab
+    - Assets/Prefabs/Door_Cover_Palette.prefab.meta
     - Assets/Prefabs/Main Camera X Locked.prefab
     - Assets/Prefabs/Main Camera X Locked.prefab.meta
     - Assets/Prefabs/Main Camera Y Locked.prefab
@@ -89,35 +96,47 @@ MonoBehaviour:
     - Assets/Scripts/CameraLockedY.cs.meta
     - Assets/Scripts/DoorInteract.cs
     - Assets/Scripts/DoorInteract.cs.meta
-    - Assets/Scripts/DoorInteraction.cs
-    - Assets/Scripts/DoorInteraction.cs.meta
     - Assets/Scripts/LoadScene.cs
     - Assets/Scripts/LoadScene.cs.meta
     - Assets/Scripts/NormalProjectilePhysics.cs
     - Assets/Scripts/NormalProjectilePhysics.cs.meta
+    - Assets/Scripts/OpenDoor.cs
+    - Assets/Scripts/OpenDoor.cs.meta
     - Assets/Scripts/PlayerMovement.cs
     - Assets/Scripts/PlayerMovement.cs.meta
     - Assets/Scripts/SceneTracker.cs
     - Assets/Scripts/SceneTracker.cs.meta
     - Assets/Sprites/Doors.meta
+    - Assets/Sprites/Doors/closeRed.asset
+    - Assets/Sprites/Doors/closeRed.asset.meta
     - Assets/Sprites/Doors/closeRed.png
     - Assets/Sprites/Doors/closeRed.png.meta
+    - Assets/Sprites/Doors/closeRedLeft.asset
+    - Assets/Sprites/Doors/closeRedLeft.asset.meta
     - Assets/Sprites/Doors/closeRedLeft.png
     - Assets/Sprites/Doors/closeRedLeft.png.meta
+    - Assets/Sprites/Doors/closedBlue.asset
+    - Assets/Sprites/Doors/closedBlue.asset.meta
     - Assets/Sprites/Doors/closedBlue.png
     - Assets/Sprites/Doors/closedBlue.png.meta
     - Assets/Sprites/Doors/closedBlueLeft.asset
     - Assets/Sprites/Doors/closedBlueLeft.asset.meta
     - Assets/Sprites/Doors/closedBlueLeft.png
     - Assets/Sprites/Doors/closedBlueLeft.png.meta
+    - Assets/Sprites/Doors/openBlue.asset
+    - Assets/Sprites/Doors/openBlue.asset.meta
     - Assets/Sprites/Doors/openBlue.png
     - Assets/Sprites/Doors/openBlue.png.meta
     - Assets/Sprites/Doors/openBlueLeft.asset
     - Assets/Sprites/Doors/openBlueLeft.asset.meta
     - Assets/Sprites/Doors/openBlueLeft.png
     - Assets/Sprites/Doors/openBlueLeft.png.meta
+    - Assets/Sprites/Doors/openRed.asset
+    - Assets/Sprites/Doors/openRed.asset.meta
     - Assets/Sprites/Doors/openRed.png
     - Assets/Sprites/Doors/openRed.png.meta
+    - Assets/Sprites/Doors/openRedLeft.asset
+    - Assets/Sprites/Doors/openRedLeft.asset.meta
     - Assets/Sprites/Doors/openRedLeft.png
     - Assets/Sprites/Doors/openRedLeft.png.meta
     - Assets/Sprites/Environments.meta
@@ -321,7 +340,7 @@ MonoBehaviour:
     - ProjectSettings/ProjectVersion.txt
     - ProjectSettings/TagManager.asset
     - 
-    m_Values: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    m_Values: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 

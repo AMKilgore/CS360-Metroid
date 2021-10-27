@@ -13,14 +13,17 @@ public class PlayerMovement : MonoBehaviour
     public float verticalSpeed = 50.0f;
     public bool isGrounded = true;
     float horizontalDirection;
-    float playerFacing;
     float verticalDirection;
+    float playerFacing;
     float gravityScale = 1.0f;
 
     // Shot types
     public GameObject normalShot;
     public int numberShots = 0;
     int fireDelay = 0;
+
+    // Upgrades $$ Need to be changed once upgrades are added
+    public bool hasMorphBall = true;
 
     Rigidbody2D r2d;
 
@@ -54,8 +57,29 @@ public class PlayerMovement : MonoBehaviour
             horizontalDirection = 0;
         }
 
+        // Look up
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            verticalDirection = 1;
+            animator.SetBool("LookUp", true);
+        }
+        else
+        {
+            verticalDirection = 0;
+            animator.SetBool("LookUp", false);
+        }
+
+        if (!animator.GetBool("IsMorphBall") && Input.GetKey(KeyCode.DownArrow))
+        {
+            animator.SetBool("IsMorphBall", true);
+        }
+        else if (animator.GetBool("IsMorphBall") && Input.GetKey(KeyCode.UpArrow))
+        {
+            animator.SetBool("IsMorphBall", false);
+        }
+
         // Fire the weapon if the player is grounded
-        if (Input.GetKey(KeyCode.X) && isGrounded && fireDelay == 5)
+        if (Input.GetKey(KeyCode.X) && !animator.GetBool("IsFlipJumping") && fireDelay == 5)
         {
             Fire();
         }
@@ -79,7 +103,6 @@ public class PlayerMovement : MonoBehaviour
         // Vertical movement
         if (Input.GetKey(KeyCode.Z) && isGrounded)
         {
-            verticalDirection = 1;
             r2d.AddForce(Vector2.up * 300.0f);
         }
 
@@ -93,13 +116,16 @@ public class PlayerMovement : MonoBehaviour
                     animator.SetFloat("Move X", 0.3f);
                 else
                     animator.SetFloat("Move X", -0.3f);
+                animator.SetBool("IsFlipJumping", false);
             }
+            else
+                animator.SetBool("IsFlipJumping", true);
             // Activate the jump animation
             animator.SetBool("IsJumping", true);
             isGrounded = false;
         }
         // Ground has been hit
-        else if (!isGrounded && r2d.velocity.y == 0)
+        if (!isGrounded && r2d.velocity.y == 0)
         {
             isGrounded = true;
             animator.SetBool("IsJumping", false);
@@ -116,10 +142,11 @@ public class PlayerMovement : MonoBehaviour
     {
         //$$ Add implementation for the different shot types here, use switches?
         float d = animator.GetFloat("Direction");
+        bool v = animator.GetBool("LookUp");
         GameObject ns = Instantiate(normalShot, r2d.position + (Vector2.up * 0.40f) + (Vector2.right * d * 0.5f), Quaternion.identity);
         NormalProjectilePhysics nsPhys = ns.GetComponent<NormalProjectilePhysics>();
 
-        nsPhys.Fire(d);
+        nsPhys.Fire(d, v);
         // Add number shots if needed to check 
         ++numberShots;
     }
