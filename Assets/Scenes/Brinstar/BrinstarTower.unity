@@ -27096,6 +27096,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 3}
   m_EdgeRadius: 0
+--- !u!1 &367941395 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4108129034315229890, guid: 8031026490fac3d46bfcbdbbc56cf364, type: 3}
+  m_PrefabInstance: {fileID: 367941391}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &367941396
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367941395}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cb2b512ded6e0db4e840721f9a52ded4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &523092883
 GameObject:
   m_ObjectHideFlags: 0
@@ -27450,6 +27474,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 3}
   m_EdgeRadius: 0
+--- !u!1 &1257288774 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4108129034315229890, guid: 8031026490fac3d46bfcbdbbc56cf364, type: 3}
+  m_PrefabInstance: {fileID: 1257288770}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1257288775
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257288774}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cb2b512ded6e0db4e840721f9a52ded4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1332050940
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27798,6 +27846,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 3}
   m_EdgeRadius: 0
+--- !u!1 &1529423860 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4108129034315229890, guid: 8031026490fac3d46bfcbdbbc56cf364, type: 3}
+  m_PrefabInstance: {fileID: 1529423856}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1529423861
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529423860}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cb2b512ded6e0db4e840721f9a52ded4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &2109698592
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28008,3 +28080,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 3}
   m_EdgeRadius: 0
+--- !u!1 &2109698596 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4108129034315229890, guid: 8031026490fac3d46bfcbdbbc56cf364, type: 3}
+  m_PrefabInstance: {fileID: 2109698592}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2109698597
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109698596}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cb2b512ded6e0db4e840721f9a52ded4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
