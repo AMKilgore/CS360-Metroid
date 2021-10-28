@@ -147,9 +147,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   horizontalSpeed: 3.4
-  verticalSpeed: 50
   isGrounded: 1
-  normalShot: {fileID: 0}
+  normalShot: {fileID: 8317227113478509435, guid: 19a25b81ba461284db00b88db089b7d3, type: 3}
+  numberShots: 0
+  hasMorphBall: 1
+  MorphBall: {fileID: 8238304140020750247, guid: d12cede421cd05b429792b425faec489, type: 3}
+  hasMorphBallBomb: 1
+  MorphBallBomb: {fileID: 2538289361595956546, guid: 486e36558ae22dd4ea0456d335c0edcc, type: 3}
 --- !u!95 &6320782787666125188
 Animator:
   serializedVersion: 3

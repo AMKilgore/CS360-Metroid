@@ -24,9 +24,10 @@ public class NormalProjectilePhysics : MonoBehaviour
 
     public void Fire(float direction, bool isUp)
     {
-        //$$ Add force for the y-direction if needed
+        // Horizontal direction
         if (!isUp)
             rb2d.AddForce(Vector2.right * direction * 400.0f);
+        // Vertical direction
         else
             rb2d.AddForce(Vector2.up * 400.0f);
     }

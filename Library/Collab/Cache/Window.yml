@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
+    - .collabignore
     - Assets/Animations.meta
     - Assets/Animations/Door.meta
     - Assets/Animations/Door/Door.controller
@@ -63,8 +64,12 @@ MonoBehaviour:
     - Assets/Animations/Player/Upgrades.meta
     - Assets/Animations/Player/Upgrades/MorphBall.anim
     - Assets/Animations/Player/Upgrades/MorphBall.anim.meta
+    - Assets/Animations/Player/Upgrades/MorphBallBomb.controller
+    - Assets/Animations/Player/Upgrades/MorphBallBomb.controller.meta
     - Assets/Animations/Player/Upgrades/MorphBallController.controller
     - Assets/Animations/Player/Upgrades/MorphBallController.controller.meta
+    - Assets/Animations/Player/Upgrades/MorphBallExplode.anim
+    - Assets/Animations/Player/Upgrades/MorphBallExplode.anim.meta
     - Assets/Animations/SceneTransition.controller
     - Assets/Animations/SceneTransition.controller.meta
     - Assets/Animations/SceneTransitionFadeIn.anim
@@ -76,6 +81,8 @@ MonoBehaviour:
     - Assets/Characters/PlayerMovement.cs.meta
     - Assets/Characters/Samus_Right_Idle_Test.png
     - Assets/Characters/Samus_Right_Idle_Test.png.meta
+    - Assets/Environments.meta
+    - Assets/Environments/gray_ground.jpg.meta
     - Assets/Prefabs.meta
     - Assets/Prefabs/Brinstar_Tiles.prefab
     - Assets/Prefabs/Brinstar_Tiles.prefab.meta
@@ -88,14 +95,18 @@ MonoBehaviour:
     - Assets/Prefabs/Main Camera Y Locked.prefab
     - Assets/Prefabs/Main Camera Y Locked.prefab.meta
     - Assets/Prefabs/Player.meta
-    - Assets/Prefabs/Player/MorphBall.prefab
-    - Assets/Prefabs/Player/MorphBall.prefab.meta
     - Assets/Prefabs/Player/Player.prefab
     - Assets/Prefabs/Player/Player.prefab.meta
-    - Assets/Prefabs/Player/normalShot.prefab
-    - Assets/Prefabs/Player/normalShot.prefab.meta
     - Assets/Prefabs/SceneTransition.prefab
     - Assets/Prefabs/SceneTransition.prefab.meta
+    - Assets/Resources.meta
+    - Assets/Resources/MorphBall.prefab
+    - Assets/Resources/MorphBall.prefab.meta
+    - Assets/Resources/morphBallBomb.prefab
+    - Assets/Resources/morphBallBomb.prefab.meta
+    - Assets/Resources/normalShot.prefab
+    - Assets/Resources/normalShot.prefab.meta
+    - Assets/Scenes.meta
     - Assets/Scenes/Brinstar.meta
     - Assets/Scenes/Brinstar/BrinstarEntrance.unity
     - Assets/Scenes/Brinstar/BrinstarEntrance.unity.meta
@@ -125,12 +136,15 @@ MonoBehaviour:
     - Assets/Scripts/OpenDoor.cs
     - Assets/Scripts/OpenDoor.cs.meta
     - Assets/Scripts/Player.meta
+    - Assets/Scripts/Player/MorphBallBomb.cs
+    - Assets/Scripts/Player/MorphBallBomb.cs.meta
     - Assets/Scripts/Player/MorphBallMoves.cs
     - Assets/Scripts/Player/MorphBallMoves.cs.meta
     - Assets/Scripts/Player/PlayerMovement.cs
     - Assets/Scripts/Player/PlayerMovement.cs.meta
     - Assets/Scripts/SceneTracker.cs
     - Assets/Scripts/SceneTracker.cs.meta
+    - Assets/Sprites.meta
     - Assets/Sprites/Doors.meta
     - Assets/Sprites/Doors/closeRed.asset
     - Assets/Sprites/Doors/closeRed.asset.meta
@@ -258,7 +272,6 @@ MonoBehaviour:
     - Assets/Sprites/Environments/brinstar_ground.png.meta
     - Assets/Sprites/Environments/gray_ground 1.jpg
     - Assets/Sprites/Environments/gray_ground 1.jpg.meta
-    - Assets/Sprites/Environments/gray_ground.jpg
     - Assets/Sprites/Environments/gray_ground.jpg.meta
     - Assets/Sprites/Environments/green_ground.jpg
     - Assets/Sprites/Environments/green_ground.jpg.meta
@@ -306,6 +319,7 @@ MonoBehaviour:
     - Assets/Sprites/Hazards/lavaTop.asset.meta
     - Assets/Sprites/Hazards/lavaTop.png
     - Assets/Sprites/Hazards/lavaTop.png.meta
+    - Assets/Sprites/NES - Metroid - Samus Aran Power Suit.png.meta
     - Assets/Sprites/Player.meta
     - Assets/Sprites/Player/Projectiles.meta
     - Assets/Sprites/Player/Projectiles/normalShot.png
@@ -313,6 +327,16 @@ MonoBehaviour:
     - Assets/Sprites/Player/Projectiles/normalShotExplode.png
     - Assets/Sprites/Player/Projectiles/normalShotExplode.png.meta
     - Assets/Sprites/Player/Upgrades.meta
+    - Assets/Sprites/Player/Upgrades/morphBallBomb.png
+    - Assets/Sprites/Player/Upgrades/morphBallBomb.png.meta
+    - Assets/Sprites/Player/Upgrades/morphBallBombExplode1.png
+    - Assets/Sprites/Player/Upgrades/morphBallBombExplode1.png.meta
+    - Assets/Sprites/Player/Upgrades/morphBallBombExplode2.png
+    - Assets/Sprites/Player/Upgrades/morphBallBombExplode2.png.meta
+    - Assets/Sprites/Player/Upgrades/morphBallBombExplode3.png
+    - Assets/Sprites/Player/Upgrades/morphBallBombExplode3.png.meta
+    - Assets/Sprites/Player/Upgrades/morphBallBombFlash.png
+    - Assets/Sprites/Player/Upgrades/morphBallBombFlash.png.meta
     - Assets/Sprites/Player/Upgrades/morphBallFour.png
     - Assets/Sprites/Player/Upgrades/morphBallFour.png.meta
     - Assets/Sprites/Player/Upgrades/morphBallOne.png
@@ -379,6 +403,7 @@ MonoBehaviour:
     - Assets/Sprites/Player/samusWalkTwoLeft.png.meta
     - Assets/Sprites/itemholder.png
     - Assets/Sprites/itemholder.png.meta
+    - Assets/Sprites/metroid_tileset.jpg.meta
     - Assets/Sprites/spawnerpipe.png
     - Assets/Sprites/spawnerpipe.png.meta
     - Assets/Tiles.meta
@@ -391,10 +416,13 @@ MonoBehaviour:
     - ProjectSettings/EditorBuildSettings.asset
     - ProjectSettings/GraphicsSettings.asset
     - ProjectSettings/Physics2DSettings.asset
+    - ProjectSettings/ProjectSettings.asset
     - ProjectSettings/ProjectVersion.txt
     - ProjectSettings/TagManager.asset
+    - ProjectSettings/UnityConnectSettings.asset
+    - ProjectSettings/VersionControlSettings.asset
     - 
-    m_Values: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    m_Values: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 

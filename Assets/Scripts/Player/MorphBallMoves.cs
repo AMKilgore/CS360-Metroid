@@ -9,6 +9,15 @@ public class MorphBallMoves : MonoBehaviour
 
     public GameObject storedPlayer;
 
+    // Delay between placing bombs
+    private int bombDelay = 0;
+    private bool canPlaceBomb;
+
+    // Upgrades, change later
+    public bool hasMorphBallBomb = true;
+    public GameObject morphBallBomb;
+    public int numMorphBombs = 0;
+
     // Parameters, taken from player
     public float horizontalSpeed = 3.4f;
     public float verticalSpeed = 50.0f;
@@ -18,6 +27,7 @@ public class MorphBallMoves : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        morphBallBomb = (GameObject)Resources.Load("MorphBallBomb", typeof(GameObject));
         animator = GetComponent<Animator>();
         r2d = GetComponent<Rigidbody2D>();
 
@@ -32,11 +42,17 @@ public class MorphBallMoves : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
         {
             horizontalDirection = Input.GetKey(KeyCode.LeftArrow) ? -1 : 1;
-            animator.SetFloat("Direction", horizontalDirection);
         }
         else
         {
             horizontalDirection = 0;
+        }
+
+        // Place bomb
+        if (Input.GetKey(KeyCode.X) && numMorphBombs < 3 && canPlaceBomb)
+        {
+            PlaceMorphBallBomb();
+            canPlaceBomb = false;
         }
 
         // Leave morphball, respawn player
@@ -48,11 +64,23 @@ public class MorphBallMoves : MonoBehaviour
 
         // Move horizontally
         r2d.transform.Translate(Vector2.right * horizontalDirection * horizontalSpeed * Time.deltaTime);
+
+        if (!canPlaceBomb && bombDelay < 10)
+        {
+            bombDelay += 1;
+        }
+        else if (!canPlaceBomb && bombDelay == 10)
+        {
+            canPlaceBomb = true;
+            bombDelay = 0;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    // Place Morph Ball bomb
+    void PlaceMorphBallBomb()
     {
-        
+        GameObject mbb = Instantiate(morphBallBomb, r2d.position, Quaternion.identity);
+        MorphBallBomb mbbs = mbb.GetComponent<MorphBallBomb>();
+        ++numMorphBombs;
     }
 }

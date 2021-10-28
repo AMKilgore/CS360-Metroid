@@ -86,17 +86,12 @@ public class PlayerMovement : MonoBehaviour
             CreateMorphBall();
             //animator.SetBool("IsMorphBall", true);
         }
-        else if (animator.GetBool("IsMorphBall") && Input.GetKey(KeyCode.UpArrow))
-        {
-            //animator.SetBool("IsMorphBall", false);
-        }
 
         // Fire the weapon if the player is grounded
         if (Input.GetKey(KeyCode.X) && !animator.GetBool("IsFlipJumping") && fireDelay == 5)
         {
             Fire();
         }
-
 
         // Move horizontally
         r2d.transform.Translate(Vector2.right * horizontalDirection * horizontalSpeed * Time.deltaTime);
@@ -174,4 +169,6 @@ public class PlayerMovement : MonoBehaviour
         MorphBallMoves mbMoves = mb.GetComponent<MorphBallMoves>();
         Destroy(gameObject);
     }
+
+    
 }
