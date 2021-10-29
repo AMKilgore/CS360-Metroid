@@ -9,6 +9,7 @@ public class MorphBallBomb : MonoBehaviour
     private float counter = 0;
     private float animLength;
     public bool isExploding = false;
+    private bool hitDestructable = false;
     // Make sure multiple player collisions do not happen
     public bool hasLaunched = false;
 
@@ -17,6 +18,7 @@ public class MorphBallBomb : MonoBehaviour
     {
         isExploding = false;
         hasLaunched = false;
+        hitDestructable = false;
         animation = gameObject.GetComponent<Animator>();
         animLength = animation.GetCurrentAnimatorStateInfo(0).length;
     }
@@ -44,7 +46,13 @@ public class MorphBallBomb : MonoBehaviour
     {
         isExploding = true;
         LaunchPlayer();
+        if (hitDestructable)
+            FindObjectOfType<DestructableBlocks>().DestroyNearest(this.gameObject);
     }
+
+
+
+
 
     public void LaunchPlayer()
     {
@@ -72,5 +80,16 @@ public class MorphBallBomb : MonoBehaviour
                 FindObjectOfType<MorphBallMoves>().r2d.AddForce((f * Vector2.up) + (f * Vector2.right * sign));
             }
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+        Debug.Log(collision.name);
+        if (collision.name == "Destructable_Tiles")
+        {
+            hitDestructable = true;
+        }
+        
     }
 }

@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animation: {fileID: 0}
   isExploding: 1
+  hasLaunched: 0
 --- !u!95 &6622305142834146974
 Animator:
   serializedVersion: 3

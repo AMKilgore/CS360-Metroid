@@ -19,7 +19,10 @@ public class PlayerMovement : MonoBehaviour
     // Shot types
     public GameObject normalShot;
     public int numberShots = 0;
+    public int maxShots = 3;
     int fireDelay = 0;
+    // Shot upgrades $$ Change later
+    public bool hasLongBeam = true;
 
     // Upgrades $$ Need to be changed once upgrades are added
     public bool hasMorphBall = true;
@@ -148,19 +151,22 @@ public class PlayerMovement : MonoBehaviour
 
     void Fire()
     {
-        //$$ Add implementation for the different shot types here, use switches?
-        float d = animator.GetFloat("Direction");
-        bool v = animator.GetBool("LookUp");
-        GameObject ns;
-        if (!v)
-            ns = Instantiate(normalShot, r2d.position + (Vector2.up * 0.40f) + (Vector2.right * d * 0.5f), Quaternion.identity);
-        else
-            ns = Instantiate(normalShot, r2d.position + (Vector2.up * 0.40f) + (Vector2.right * d * 0.3f * 0.45f), Quaternion.identity);
-        NormalProjectilePhysics nsPhys = ns.GetComponent<NormalProjectilePhysics>();
+        if ((hasLongBeam && numberShots < maxShots) || !hasLongBeam)
+        {
+            //$$ Add implementation for the different shot types here, use switches?
+            float d = animator.GetFloat("Direction");
+            bool v = animator.GetBool("LookUp");
+            GameObject ns;
+            if (!v)
+                ns = Instantiate(normalShot, r2d.position + (Vector2.up * 0.40f) + (Vector2.right * d * 0.5f), Quaternion.identity);
+            else
+                ns = Instantiate(normalShot, r2d.position + (Vector2.up * 0.40f) + (Vector2.right * d * 0.3f * 0.45f), Quaternion.identity);
+            NormalProjectilePhysics nsPhys = ns.GetComponent<NormalProjectilePhysics>();
 
-        nsPhys.Fire(d, v);
-        // Add number shots if needed to check 
-        ++numberShots;
+            nsPhys.Fire(d, v);
+            // Add number shots if needed to check 
+            ++numberShots;
+        }
     }
 
     void CreateMorphBall()

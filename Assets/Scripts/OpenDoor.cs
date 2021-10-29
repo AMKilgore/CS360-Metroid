@@ -22,8 +22,6 @@ public class OpenDoor : MonoBehaviour
         // Get name of collider, remove the clone identifier if a missle/bullet
         string collider = other.name.Split('(')[0];
 
-        Debug.Log(collider);
-
         if (collider == openType)
         {
             animator.SetInteger("OpenType", 1);

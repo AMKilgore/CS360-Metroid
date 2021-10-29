@@ -61,6 +61,7 @@
     <Compile Include="Assets\Scripts\SceneTracker.cs" />
     <Compile Include="Assets\Scripts\Player\MorphBallBomb.cs" />
     <Compile Include="Assets\Scripts\DoorInteract.cs" />
+    <Compile Include="Assets\Scripts\DestructableBlocks.cs" />
     <Compile Include="Assets\Scripts\OpenDoor.cs" />
     <Compile Include="Assets\Scripts\Player\MorphBallMoves.cs" />
     <Compile Include="Assets\Scripts\CameraLockedY.cs" />
