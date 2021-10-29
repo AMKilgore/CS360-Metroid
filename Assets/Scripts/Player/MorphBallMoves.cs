@@ -17,6 +17,7 @@ public class MorphBallMoves : MonoBehaviour
     public bool hasMorphBallBomb = true;
     public GameObject morphBallBomb;
     public int numMorphBombs = 0;
+    MorphBallBomb morphBallBScript;
 
     // Parameters, taken from player
     public float horizontalSpeed = 3.4f;
@@ -80,7 +81,8 @@ public class MorphBallMoves : MonoBehaviour
     void PlaceMorphBallBomb()
     {
         GameObject mbb = Instantiate(morphBallBomb, r2d.position, Quaternion.identity);
-        MorphBallBomb mbbs = mbb.GetComponent<MorphBallBomb>();
+        morphBallBScript = mbb.GetComponent<MorphBallBomb>();
         ++numMorphBombs;
     }
+
 }

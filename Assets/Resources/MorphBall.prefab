@@ -99,8 +99,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 1
+  m_AngularDrag: 0
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -116,7 +116,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 8238304140020750247}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 985a0cd703a77df4c9f32ad53521b287, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -148,6 +148,9 @@ MonoBehaviour:
   animator: {fileID: 0}
   r2d: {fileID: 0}
   storedPlayer: {fileID: 7721003523651793625, guid: 52d49d93f0349b840be4ffce20d7c6fe, type: 3}
+  hasMorphBallBomb: 1
+  morphBallBomb: {fileID: 0}
+  numMorphBombs: 0
   horizontalSpeed: 3.4
   verticalSpeed: 50
 --- !u!95 &6039860413994664066

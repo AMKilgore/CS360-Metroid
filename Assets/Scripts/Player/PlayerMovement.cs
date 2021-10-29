@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     public bool hasMorphBall = true;
     public GameObject MorphBall;
 
-    Rigidbody2D r2d;
+    public Rigidbody2D r2d;
 
     // Start is called before the first frame update
     void Start()
