@@ -47,6 +47,8 @@ public class PlayerMovement : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         r2d = GetComponent<Rigidbody2D>();
+        normalShot = (GameObject)Resources.Load("normalShot", typeof(GameObject));
+        MorphBall = (GameObject)Resources.Load("MorphBall", typeof(GameObject));
 
         r2d.freezeRotation = true;
         r2d.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
