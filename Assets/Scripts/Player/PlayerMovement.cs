@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject normalShot;
     public int numberShots = 0;
     public int maxShots = 3;
+    bool canFire = true;
     int fireDelay = 0;
     // Shot upgrades $$ Change later
     public bool hasLongBeam = true;
@@ -93,9 +94,10 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Fire the weapon if the player is grounded
-        if (Input.GetKey(KeyCode.X) && !animator.GetBool("IsFlipJumping") && fireDelay == 5)
+        if (Input.GetKey(KeyCode.X) && !animator.GetBool("IsFlipJumping") && canFire)
         {
             Fire();
+            canFire = false;
         }
 
         // Move horizontally
@@ -141,14 +143,21 @@ public class PlayerMovement : MonoBehaviour
         if (!isGrounded && r2d.velocity.y == 0)
         {
             isGrounded = true;
+            animator.SetBool("IsFlipJumping", false);
             animator.SetBool("IsJumping", false);
         }
 
         // Delay for the missle firing, if the user holds down the fire button, only allow to fire every five frames
-        if (fireDelay == 5)
-            fireDelay = 0;
-        else
-            ++fireDelay;
+        if (!canFire)
+        {
+            if (fireDelay == 5)
+            {
+                fireDelay = 0;
+                canFire = true;
+            }
+            else
+                ++fireDelay;
+        }
     }
 
     void Fire()
