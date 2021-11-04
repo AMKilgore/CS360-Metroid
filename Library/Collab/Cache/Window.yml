@@ -76,6 +76,9 @@ MonoBehaviour:
     - Assets/Animations/SceneTransitionFadeIn.anim.meta
     - Assets/Animations/SceneTransitionFadeOut.anim
     - Assets/Animations/SceneTransitionFadeOut.anim.meta
+    - Assets/Animations/Zoomer.meta
+    - Assets/Animations/Zoomer/Enemy-1.controller
+    - Assets/Animations/Zoomer/Enemy-1.controller.meta
     - Assets/Characters.meta
     - Assets/Characters/PlayerMovement.cs
     - Assets/Characters/PlayerMovement.cs.meta
@@ -84,22 +87,35 @@ MonoBehaviour:
     - Assets/Environments.meta
     - Assets/Environments/gray_ground.jpg.meta
     - Assets/Prefabs.meta
-    - Assets/Prefabs/Brinstar_Tiles.prefab
-    - Assets/Prefabs/Brinstar_Tiles.prefab.meta
-    - Assets/Prefabs/Door.prefab
-    - Assets/Prefabs/Door.prefab.meta
-    - Assets/Prefabs/Door_Cover_Palette.prefab
-    - Assets/Prefabs/Door_Cover_Palette.prefab.meta
     - Assets/Prefabs/Main Camera X Locked.prefab
     - Assets/Prefabs/Main Camera X Locked.prefab.meta
     - Assets/Prefabs/Main Camera Y Locked.prefab
     - Assets/Prefabs/Main Camera Y Locked.prefab.meta
+    - Assets/Prefabs/Palettes.meta
+    - Assets/Prefabs/Palettes/Brinstar_Tiles.prefab
+    - Assets/Prefabs/Palettes/Brinstar_Tiles.prefab.meta
+    - Assets/Prefabs/Palettes/Destructable Palette.prefab
+    - Assets/Prefabs/Palettes/Destructable Palette.prefab.meta
+    - Assets/Prefabs/Palettes/Destructable_Tiles.prefab
+    - Assets/Prefabs/Palettes/Destructable_Tiles.prefab.meta
+    - Assets/Prefabs/Palettes/Door.prefab
+    - Assets/Prefabs/Palettes/Door.prefab.meta
+    - Assets/Prefabs/Palettes/Door_Cover_Palette.prefab
+    - Assets/Prefabs/Palettes/Door_Cover_Palette.prefab.meta
     - Assets/Prefabs/Player.meta
     - Assets/Prefabs/Player/Player.prefab
     - Assets/Prefabs/Player/Player.prefab.meta
+    - Assets/Prefabs/Player/ZoomerDeathAnimation.anim
+    - Assets/Prefabs/Player/ZoomerDeathAnimation.anim.meta
+    - Assets/Prefabs/Player/ZoomerMovement.anim
+    - Assets/Prefabs/Player/ZoomerMovement.anim.meta
+    - Assets/Prefabs/Player/ZoomerTakeDamage.anim
+    - Assets/Prefabs/Player/ZoomerTakeDamage.anim.meta
     - Assets/Prefabs/SceneTransition.prefab
     - Assets/Prefabs/SceneTransition.prefab.meta
     - Assets/Resources.meta
+    - Assets/Resources/Bouncy.physicsMaterial2D
+    - Assets/Resources/Bouncy.physicsMaterial2D.meta
     - Assets/Resources/MorphBall.prefab
     - Assets/Resources/MorphBall.prefab.meta
     - Assets/Resources/morphBallBomb.prefab
@@ -127,8 +143,13 @@ MonoBehaviour:
     - Assets/Scripts/CameraLockedX.cs.meta
     - Assets/Scripts/CameraLockedY.cs
     - Assets/Scripts/CameraLockedY.cs.meta
+    - Assets/Scripts/DestructableBlocks.cs
+    - Assets/Scripts/DestructableBlocks.cs.meta
     - Assets/Scripts/DoorInteract.cs
     - Assets/Scripts/DoorInteract.cs.meta
+    - Assets/Scripts/Enemies.meta
+    - Assets/Scripts/Enemies/Zoomer_Movement.cs
+    - Assets/Scripts/Enemies/Zoomer_Movement.cs.meta
     - Assets/Scripts/LoadScene.cs
     - Assets/Scripts/LoadScene.cs.meta
     - Assets/Scripts/NormalProjectilePhysics.cs
@@ -178,6 +199,34 @@ MonoBehaviour:
     - Assets/Sprites/Doors/openRedLeft.asset.meta
     - Assets/Sprites/Doors/openRedLeft.png
     - Assets/Sprites/Doors/openRedLeft.png.meta
+    - Assets/Sprites/Enemies.meta
+    - Assets/Sprites/Enemies/Mellow.meta
+    - Assets/Sprites/Enemies/Reo.meta
+    - Assets/Sprites/Enemies/Ripper.meta
+    - Assets/Sprites/Enemies/Skree.meta
+    - Assets/Sprites/Enemies/Skree/Skree-1.png
+    - Assets/Sprites/Enemies/Skree/Skree-1.png.meta
+    - Assets/Sprites/Enemies/Skree/Skree-Dive-1.png
+    - Assets/Sprites/Enemies/Skree/Skree-Dive-1.png.meta
+    - Assets/Sprites/Enemies/Skree/Skree-Dive-2.png
+    - Assets/Sprites/Enemies/Skree/Skree-Dive-2.png.meta
+    - Assets/Sprites/Enemies/Skree/Skree-Projectile.png
+    - Assets/Sprites/Enemies/Skree/Skree-Projectile.png.meta
+    - Assets/Sprites/Enemies/Waver.meta
+    - Assets/Sprites/Enemies/Zeb.meta
+    - Assets/Sprites/Enemies/Zoomer.meta
+    - Assets/Sprites/Enemies/Zoomer/zoomer-1.png
+    - Assets/Sprites/Enemies/Zoomer/zoomer-1.png.meta
+    - Assets/Sprites/Enemies/Zoomer/zoomer-2.png
+    - Assets/Sprites/Enemies/Zoomer/zoomer-2.png.meta
+    - Assets/Sprites/Enemies/Zoomer/zoomer-damage-x1.png
+    - Assets/Sprites/Enemies/Zoomer/zoomer-damage-x1.png.meta
+    - Assets/Sprites/Enemies/Zoomer/zoomer-damage-x2.png
+    - Assets/Sprites/Enemies/Zoomer/zoomer-damage-x2.png.meta
+    - Assets/Sprites/Enemies/Zoomer/zoomer-damage-xx1.png
+    - Assets/Sprites/Enemies/Zoomer/zoomer-damage-xx1.png.meta
+    - Assets/Sprites/Enemies/Zoomer/zoomer-damage-xx2.png
+    - Assets/Sprites/Enemies/Zoomer/zoomer-damage-xx2.png.meta
     - Assets/Sprites/Environments.meta
     - Assets/Sprites/Environments/black.asset
     - Assets/Sprites/Environments/black.asset.meta
@@ -222,6 +271,10 @@ MonoBehaviour:
     - Assets/Sprites/Environments/brinstar/damagedblock.asset.meta
     - Assets/Sprites/Environments/brinstar/damagedblock.png
     - Assets/Sprites/Environments/brinstar/damagedblock.png.meta
+    - Assets/Sprites/Environments/brinstar/destructableBlock.asset
+    - Assets/Sprites/Environments/brinstar/destructableBlock.asset.meta
+    - Assets/Sprites/Environments/brinstar/destructableBlock.png
+    - Assets/Sprites/Environments/brinstar/destructableBlock.png.meta
     - Assets/Sprites/Environments/brinstar/doorframe.asset
     - Assets/Sprites/Environments/brinstar/doorframe.asset.meta
     - Assets/Sprites/Environments/brinstar/doorframe.png
@@ -403,6 +456,8 @@ MonoBehaviour:
     - Assets/Sprites/Player/samusWalkTwoLeft.png.meta
     - Assets/Sprites/itemholder.png
     - Assets/Sprites/itemholder.png.meta
+    - Assets/Sprites/metroid_sprite_sheet.png
+    - Assets/Sprites/metroid_sprite_sheet.png.meta
     - Assets/Sprites/metroid_tileset.jpg.meta
     - Assets/Sprites/spawnerpipe.png
     - Assets/Sprites/spawnerpipe.png.meta
@@ -422,7 +477,7 @@ MonoBehaviour:
     - ProjectSettings/UnityConnectSettings.asset
     - ProjectSettings/VersionControlSettings.asset
     - 
-    m_Values: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    m_Values: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 
