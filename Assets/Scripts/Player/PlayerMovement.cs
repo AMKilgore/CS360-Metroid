@@ -17,6 +17,11 @@ public class PlayerMovement : MonoBehaviour
     float gravityScale = 1.0f;
 
     // Shot types
+    enum FireMode { normal, missle };
+    FireMode selectedMode;
+    bool canChange = true;
+    int changeDelay = 0;
+
     public GameObject normalShot;
     public int numberShots = 0;
     public int maxShots = 3;
@@ -93,10 +98,21 @@ public class PlayerMovement : MonoBehaviour
             //animator.SetBool("IsMorphBall", true);
         }
 
+        // Change firemode
+        if (Input.GetKey(KeyCode.A) && canChange)
+        {
+            if (selectedMode == FireMode.normal)
+                selectedMode = FireMode.missle;
+            else
+                selectedMode = FireMode.normal;
+
+            Debug.Log(selectedMode);
+        }
+
         // Fire the weapon if the player is grounded
         if (Input.GetKey(KeyCode.X) && !animator.GetBool("IsFlipJumping") && canFire)
         {
-            Fire();
+            Fire(selectedMode);
             canFire = false;
         }
 
@@ -158,11 +174,22 @@ public class PlayerMovement : MonoBehaviour
             else
                 ++fireDelay;
         }
+
+        if (!canChange)
+        {
+            if (changeDelay == 10)
+            {
+                changeDelay = 0;
+                canChange = true;
+            }
+            else
+                ++changeDelay;
+        }
     }
 
-    void Fire()
+    void Fire(FireMode mode)
     {
-        if ((hasLongBeam && numberShots < maxShots) || !hasLongBeam)
+        if (FireMode.normal == mode && ((hasLongBeam && numberShots < maxShots) || !hasLongBeam))
         {
             //$$ Add implementation for the different shot types here, use switches?
             float d = animator.GetFloat("Direction");
