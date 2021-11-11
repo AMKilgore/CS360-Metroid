@@ -8,6 +8,7 @@ public class NormalProjectilePhysics : MonoBehaviour
     Rigidbody2D rb2d;
     bool hasLongBeam = false;
     Vector3 spawnPosition;
+    GameObject c;
 
     // Start is called before the first frame update
     void Awake()
@@ -16,6 +17,10 @@ public class NormalProjectilePhysics : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spawnPosition = transform.position;
+        // Get camera for deleting when out of view
+        c = GameObject.Find("Main Camera X Locked");
+        if (c == null)
+            c = GameObject.Find("Main Camera Y Locked");
     }
 
     private void OnDestroy()
@@ -49,6 +54,19 @@ public class NormalProjectilePhysics : MonoBehaviour
             {
                 Destroy(gameObject);
             }
+        }
+
+        // Radius of camera to edge
+        float size = c.GetComponent<Camera>().orthographicSize * 2f;
+        // Check if outside of bounds of camera (X)
+        if (gameObject.transform.position.x < c.transform.position.x - size || gameObject.transform.position.x > c.transform.position.x + size)
+        {
+            Destroy(gameObject);
+        }
+        // Check if outside of bounds of camera (Y)
+        else if (gameObject.transform.position.y < c.transform.position.y - size || gameObject.transform.position.y > c.transform.position.y + size)
+        {
+            Destroy(gameObject);
         }
     }
 }

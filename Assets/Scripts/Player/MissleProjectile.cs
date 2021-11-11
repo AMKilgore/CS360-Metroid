@@ -7,6 +7,7 @@ public class MissleProjectile : MonoBehaviour
     Animator animator;
     Rigidbody2D rb2d;
     Vector3 spawnPosition;
+    GameObject c;
 
     // Start is called before the first frame update
     void Awake()
@@ -14,6 +15,11 @@ public class MissleProjectile : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spawnPosition = transform.position;
+
+        // Get camera for deleting when out of view
+        c = GameObject.Find("Main Camera X Locked");
+        if (c == null)
+            c = GameObject.Find("Main Camera Y Locked");
     }
 
     private void OnDestroy()
@@ -33,7 +39,6 @@ public class MissleProjectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("destroy");
         animator.SetBool("OnCollide", true);
         Destroy(gameObject);
     }
@@ -41,6 +46,17 @@ public class MissleProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Radius of camera to edge
+        float size = c.GetComponent<Camera>().orthographicSize * 2f;
+        // Check if outside of bounds of camera (X)
+        if (gameObject.transform.position.x < c.transform.position.x - size || gameObject.transform.position.x > c.transform.position.x + size)
+        {
+            Destroy(gameObject);
+        }
+        else if (gameObject.transform.position.y < c.transform.position.y - size || gameObject.transform.position.y > c.transform.position.y + size)
+        {
+            Destroy(gameObject);
+        }
 
     }
 }
