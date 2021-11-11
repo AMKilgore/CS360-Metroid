@@ -34,6 +34,11 @@ public class PlayerMovement : MonoBehaviour
     public bool hasMorphBall = true;
     public GameObject MorphBall;
 
+    // Missles, need one for each direction
+    public GameObject leftMissle;
+    public GameObject rightMissle;
+    public GameObject upMissle;
+
     public Rigidbody2D r2d;
 
     // Start is called before the first frame update
@@ -43,6 +48,9 @@ public class PlayerMovement : MonoBehaviour
         r2d = GetComponent<Rigidbody2D>();
         normalShot = (GameObject)Resources.Load("normalShot", typeof(GameObject));
         MorphBall = (GameObject)Resources.Load("MorphBall", typeof(GameObject));
+        leftMissle = (GameObject)Resources.Load("missleLeft", typeof(GameObject));
+        rightMissle = (GameObject)Resources.Load("missleRight", typeof(GameObject));
+        upMissle = (GameObject)Resources.Load("missleUp", typeof(GameObject));
 
         r2d.freezeRotation = true;
         r2d.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
@@ -55,6 +63,9 @@ public class PlayerMovement : MonoBehaviour
         r2d = GetComponent<Rigidbody2D>();
         normalShot = (GameObject)Resources.Load("normalShot", typeof(GameObject));
         MorphBall = (GameObject)Resources.Load("MorphBall", typeof(GameObject));
+        leftMissle = (GameObject)Resources.Load("missleLeft", typeof(GameObject));
+        rightMissle = (GameObject)Resources.Load("missleRight", typeof(GameObject));
+        upMissle = (GameObject)Resources.Load("missleUp", typeof(GameObject));
 
         r2d.freezeRotation = true;
         r2d.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
@@ -99,14 +110,19 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Change firemode
-        if (Input.GetKey(KeyCode.A) && canChange)
+        if (Input.GetKeyUp(KeyCode.A) && canChange)
         {
             if (selectedMode == FireMode.normal)
+            {
                 selectedMode = FireMode.missle;
+                animator.SetBool("InMissleMode", true);
+            }
             else
+            {
                 selectedMode = FireMode.normal;
-
-            Debug.Log(selectedMode);
+                animator.SetBool("InMissleMode", false);
+            }
+            canChange = false;
         }
 
         // Fire the weapon if the player is grounded
@@ -189,11 +205,12 @@ public class PlayerMovement : MonoBehaviour
 
     void Fire(FireMode mode)
     {
+        //$$ Add implementation for the different shot types here, use switches?
+        float d = animator.GetFloat("Direction");
+        bool v = animator.GetBool("LookUp");
+
         if (FireMode.normal == mode && ((hasLongBeam && numberShots < maxShots) || !hasLongBeam))
-        {
-            //$$ Add implementation for the different shot types here, use switches?
-            float d = animator.GetFloat("Direction");
-            bool v = animator.GetBool("LookUp");
+        {   
             GameObject ns;
             if (!v)
                 ns = Instantiate(normalShot, r2d.position + (Vector2.up * 0.40f) + (Vector2.right * d * 0.5f), Quaternion.identity);
@@ -204,6 +221,31 @@ public class PlayerMovement : MonoBehaviour
             nsPhys.Fire(d, v);
             // Add number shots if needed to check 
             ++numberShots;
+        }
+        else if (FireMode.missle == mode && (numberShots < maxShots))
+        {
+            GameObject obj = null;
+
+            // Vertical missle
+            if (v)
+                obj = upMissle;
+            // Left missle
+            else if (d == -1)
+                obj = leftMissle;
+            // Right missle
+            else
+                obj = rightMissle;
+
+            GameObject ns;
+            if (!v)
+                ns = Instantiate(obj, r2d.position + (Vector2.up * 0.40f) + (Vector2.right * d * 0.5f), Quaternion.identity);
+            else
+                ns = Instantiate(obj, r2d.position + (Vector2.up * 0.40f) + (Vector2.right * d * 0.3f * 0.45f), Quaternion.identity);
+            MissleProjectile mPhys = ns.GetComponent<MissleProjectile>();
+
+            mPhys.Fire(d, v);
+            // Add number shots if needed to check 
+            numberShots += 3;
         }
     }
 
