@@ -327,7 +327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7be8e9f334f8c804b95d76ed03517ebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openType: missleShot
+  openType: missle
   direction: 0
 --- !u!1 &111369373 stripped
 GameObject:

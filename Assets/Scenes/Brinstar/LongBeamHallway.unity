@@ -951,6 +951,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4108129034732813709, guid: 8031026490fac3d46bfcbdbbc56cf364, type: 3}
+      propertyPath: openType
+      value: missle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4108129034732813709, guid: 8031026490fac3d46bfcbdbbc56cf364, type: 3}
       propertyPath: doorLocation
       value: leftDoor
       objectReference: {fileID: 0}
@@ -977,7 +981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7be8e9f334f8c804b95d76ed03517ebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openType: missleShot
+  openType: missle
   direction: 1
 --- !u!1 &1933916713 stripped
 GameObject:
