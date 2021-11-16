@@ -16,6 +16,12 @@ public class PlayerMovement : MonoBehaviour
     float playerFacing;
     float gravityScale = 1.0f;
 
+    // Player Attributes
+    public int health = 99;
+    public int totalEnergyTanks = 0;
+    public int remainingEnergyTanks = 0;
+    public int numMissles = 5;
+
     // Shot types
     enum FireMode { normal, missle };
     FireMode selectedMode;
@@ -222,7 +228,7 @@ public class PlayerMovement : MonoBehaviour
             // Add number shots if needed to check 
             ++numberShots;
         }
-        else if (FireMode.missle == mode && (numberShots < maxShots))
+        else if (FireMode.missle == mode && (numberShots < maxShots) && numMissles > 0)
         {
             GameObject obj = null;
 
@@ -246,6 +252,16 @@ public class PlayerMovement : MonoBehaviour
             mPhys.Fire(d, v);
             // Add number shots if needed to check 
             numberShots += 3;
+
+            // Decrease missle count
+            numMissles -= 1;
+            // Update the GUI value
+            int h = numMissles / 100;
+            int t = (numMissles % 100) / 10;
+            int o = (numMissles % 100) % 10;
+            UpdateUINumber(GameObject.Find("Missles_Hundreds").GetComponent<SpriteRenderer>(), h);
+            UpdateUINumber(GameObject.Find("Missles_Tens").GetComponent<SpriteRenderer>(), t);
+            UpdateUINumber(GameObject.Find("Missles_Ones").GetComponent<SpriteRenderer>(), o);
         }
     }
 
@@ -254,6 +270,12 @@ public class PlayerMovement : MonoBehaviour
         GameObject mb = Instantiate(MorphBall, r2d.position, Quaternion.identity);
         MorphBallMoves mbMoves = mb.GetComponent<MorphBallMoves>();
         Destroy(gameObject);
+    }
+
+    // Update the GUI number display
+    void UpdateUINumber(SpriteRenderer icon, int value)
+    {
+        icon.sprite = Resources.Load<Sprite>("UI/" + value.ToString());
     }
 
     
