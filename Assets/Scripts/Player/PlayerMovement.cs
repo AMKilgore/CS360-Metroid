@@ -109,7 +109,7 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("LookUp", false);
         }
 
-        if (!animator.GetBool("IsMorphBall") && Input.GetKey(KeyCode.DownArrow))
+        if (!animator.GetBool("IsMorphBall") && Input.GetKey(KeyCode.DownArrow) && hasMorphBall)
         {
             CreateMorphBall();
             //animator.SetBool("IsMorphBall", true);

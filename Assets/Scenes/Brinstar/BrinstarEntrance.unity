@@ -123,6 +123,24 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &12680444 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7863610064523814266, guid: ad0fe8ef95b37c44db40d75affefa7af, type: 3}
+  m_PrefabInstance: {fileID: 5858464056833238518}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &12680445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12680444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e3a16c071975c94ba9bdfea43e10809, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeName: MorphBall
 --- !u!1 &396767814
 GameObject:
   m_ObjectHideFlags: 0
@@ -5127,6 +5145,10 @@ PrefabInstance:
       propertyPath: normalShot
       value: 
       objectReference: {fileID: 8317227113478509435, guid: 19a25b81ba461284db00b88db089b7d3, type: 3}
+    - target: {fileID: 7721003523651793620, guid: 52d49d93f0349b840be4ffce20d7c6fe, type: 3}
+      propertyPath: hasMorphBall
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7721003523651793621, guid: 52d49d93f0349b840be4ffce20d7c6fe, type: 3}
       propertyPath: m_Size.y
       value: 2.25
@@ -5901,3 +5923,72 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &5858464056833238518
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -7829285827401403074, guid: ad0fe8ef95b37c44db40d75affefa7af, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 557bcc0b0708036439d30ca12e7cc7d5, type: 2}
+    - target: {fileID: -7302005505088058698, guid: ad0fe8ef95b37c44db40d75affefa7af, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7302005505088058698, guid: ad0fe8ef95b37c44db40d75affefa7af, type: 3}
+      propertyPath: m_UsedByEffector
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937170128606686981, guid: ad0fe8ef95b37c44db40d75affefa7af, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937170128606686981, guid: ad0fe8ef95b37c44db40d75affefa7af, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 17.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937170128606686981, guid: ad0fe8ef95b37c44db40d75affefa7af, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 26.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937170128606686981, guid: ad0fe8ef95b37c44db40d75affefa7af, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937170128606686981, guid: ad0fe8ef95b37c44db40d75affefa7af, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937170128606686981, guid: ad0fe8ef95b37c44db40d75affefa7af, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937170128606686981, guid: ad0fe8ef95b37c44db40d75affefa7af, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937170128606686981, guid: ad0fe8ef95b37c44db40d75affefa7af, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937170128606686981, guid: ad0fe8ef95b37c44db40d75affefa7af, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937170128606686981, guid: ad0fe8ef95b37c44db40d75affefa7af, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937170128606686981, guid: ad0fe8ef95b37c44db40d75affefa7af, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863610064523814266, guid: ad0fe8ef95b37c44db40d75affefa7af, type: 3}
+      propertyPath: m_Name
+      value: MorphBallItem
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ad0fe8ef95b37c44db40d75affefa7af, type: 3}
