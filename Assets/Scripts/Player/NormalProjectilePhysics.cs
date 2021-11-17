@@ -57,7 +57,7 @@ public class NormalProjectilePhysics : MonoBehaviour
         }
 
         // Radius of camera to edge
-        float size = c.GetComponent<Camera>().orthographicSize * 2f;
+        float size = FindObjectOfType<Camera>().orthographicSize * 2f;
         // Check if outside of bounds of camera (X)
         if (gameObject.transform.position.x < c.transform.position.x - size || gameObject.transform.position.x > c.transform.position.x + size)
         {

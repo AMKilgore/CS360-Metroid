@@ -81,7 +81,44 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Look up
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            verticalDirection = 1;
+            animator.SetBool("LookUp", true);
+        }
+        else
+        {
+            verticalDirection = 0;
+            animator.SetBool("LookUp", false);
+        }
 
+        // Change firemode
+        if (Input.GetKeyUp(KeyCode.A) && canChange)
+        {
+            if (selectedMode == FireMode.normal)
+            {
+                animator.SetBool("InMissleMode", true);
+                selectedMode = FireMode.missle;
+            }
+            else
+            {
+                animator.SetBool("InMissleMode", false);
+                selectedMode = FireMode.normal;
+            }
+            canChange = false;
+        }
+
+        if (!canChange)
+        {
+            if (changeDelay == 10)
+            {
+                changeDelay = 0;
+                canChange = true;
+            }
+            else
+                ++changeDelay;
+        }
     }
 
     void FixedUpdate()
@@ -97,43 +134,16 @@ public class PlayerMovement : MonoBehaviour
             horizontalDirection = 0;
         }
 
-        // Look up
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            verticalDirection = 1;
-            animator.SetBool("LookUp", true);
-        }
-        else
-        {
-            verticalDirection = 0;
-            animator.SetBool("LookUp", false);
-        }
-
         if (!animator.GetBool("IsMorphBall") && Input.GetKey(KeyCode.DownArrow) && hasMorphBall)
         {
             CreateMorphBall();
             //animator.SetBool("IsMorphBall", true);
         }
 
-        // Change firemode
-        if (Input.GetKeyUp(KeyCode.A) && canChange)
-        {
-            if (selectedMode == FireMode.normal)
-            {
-                selectedMode = FireMode.missle;
-                animator.SetBool("InMissleMode", true);
-            }
-            else
-            {
-                selectedMode = FireMode.normal;
-                animator.SetBool("InMissleMode", false);
-            }
-            canChange = false;
-        }
-
         // Fire the weapon if the player is grounded
         if (Input.GetKey(KeyCode.X) && !animator.GetBool("IsFlipJumping") && canFire)
         {
+            Debug.Log(selectedMode);
             Fire(selectedMode);
             canFire = false;
         }
@@ -197,16 +207,6 @@ public class PlayerMovement : MonoBehaviour
                 ++fireDelay;
         }
 
-        if (!canChange)
-        {
-            if (changeDelay == 10)
-            {
-                changeDelay = 0;
-                canChange = true;
-            }
-            else
-                ++changeDelay;
-        }
     }
 
     void Fire(FireMode mode)

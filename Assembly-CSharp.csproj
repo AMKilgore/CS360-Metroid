@@ -62,6 +62,7 @@
     <Compile Include="Assets\Scripts\Player\MorphBallBomb.cs" />
     <Compile Include="Assets\Scripts\DoorInteract.cs" />
     <Compile Include="Assets\Scripts\DestructableBlocks.cs" />
+    <Compile Include="Assets\Scripts\Collectables\GetUpgrade.cs" />
     <Compile Include="Assets\Scripts\Player\MissleProjectile.cs" />
     <Compile Include="Assets\Scripts\OpenDoor.cs" />
     <Compile Include="Assets\Scripts\Player\MorphBallMoves.cs" />
@@ -69,7 +70,6 @@
     <Compile Include="Assets\Scripts\LoadScene.cs" />
     <Compile Include="Assets\Scripts\Enemies\Zoomer_Movement.cs" />
     <Compile Include="Assets\Scripts\Player\NormalProjectilePhysics.cs" />
-    <Compile Include="Assets\Scripts\Collectables\GetUpgrade.cs" />
     <Reference Include="UnityEngine">
       <HintPath>D:/Unity Editors/2020.3.17f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
