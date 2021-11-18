@@ -7,18 +7,6 @@ public class GetUpgrade : MonoBehaviour
     // Attributes to all upgrades
     public string upgradeName;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnCollisionEnter2D(Collision2D other)
     {
         // Get first part of name of collision object
@@ -30,6 +18,9 @@ public class GetUpgrade : MonoBehaviour
             // Find upgrade to give to player
             if (upgradeName == "MorphBall")
                 FindObjectOfType<PlayerMovement>().hasMorphBall = true;
+            // Find upgrade to give to player
+            else if (upgradeName == "LongBeam")
+                FindObjectOfType<PlayerMovement>().hasLongBeam = true;
 
             // Play music here and freeze world
 

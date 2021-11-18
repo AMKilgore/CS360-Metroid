@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     public int health = 99;
     public int totalEnergyTanks = 0;
     public int remainingEnergyTanks = 0;
+    public int maxMissles = 5;
     public int numMissles = 5;
 
     // Shot types
@@ -37,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
     public bool hasLongBeam = true;
 
     // Upgrades $$ Need to be changed once upgrades are added
-    public bool hasMorphBall = true;
+    public bool hasMorphBall = false;
     public GameObject MorphBall;
 
     // Missles, need one for each direction
@@ -254,15 +255,52 @@ public class PlayerMovement : MonoBehaviour
             numberShots += 3;
 
             // Decrease missle count
-            numMissles -= 1;
-            // Update the GUI value
-            int h = numMissles / 100;
-            int t = (numMissles % 100) / 10;
-            int o = (numMissles % 100) % 10;
-            UpdateUINumber(GameObject.Find("Missles_Hundreds").GetComponent<SpriteRenderer>(), h);
-            UpdateUINumber(GameObject.Find("Missles_Tens").GetComponent<SpriteRenderer>(), t);
-            UpdateUINumber(GameObject.Find("Missles_Ones").GetComponent<SpriteRenderer>(), o);
+            UpdateMissles(-1);
         }
+    }
+
+    // Return true or false if health is changed
+    public bool UpdateMissles(int val)
+    {
+        // Do not add missle if at maximum
+        if (numMissles == maxMissles && val == 1)
+        {
+            return false;
+        }
+
+        numMissles += val;
+        // Update the GUI value
+        int h = numMissles / 100;
+        int t = (numMissles % 100) / 10;
+        int o = (numMissles % 100) % 10;
+        UpdateUINumber(GameObject.Find("Missles_Hundreds").GetComponent<SpriteRenderer>(), h);
+        UpdateUINumber(GameObject.Find("Missles_Tens").GetComponent<SpriteRenderer>(), t);
+        UpdateUINumber(GameObject.Find("Missles_Ones").GetComponent<SpriteRenderer>(), o);
+        return true;
+    }
+
+    // Return true or false if health is changed
+    public bool UpdateHealth(int val)
+    {
+        health += val;
+        //$$ Need to add UI update for this
+        if (health > 99 && remainingEnergyTanks < totalEnergyTanks)
+        {
+            remainingEnergyTanks += 1;
+            health -= 99;
+        }
+        // Health is max, do not add
+        else if (health > 99 && remainingEnergyTanks == totalEnergyTanks)
+        {
+            health -= val;
+            return false;
+        }
+        // Update the GUI value
+        int t = health / 10;
+        int o = health % 10;
+        UpdateUINumber(GameObject.Find("Health_Tens").GetComponent<SpriteRenderer>(), t);
+        UpdateUINumber(GameObject.Find("Health_Ones").GetComponent<SpriteRenderer>(), o);
+        return true;
     }
 
     void CreateMorphBall()
