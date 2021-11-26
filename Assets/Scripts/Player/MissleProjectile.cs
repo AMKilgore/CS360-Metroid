@@ -40,12 +40,15 @@ public class MissleProjectile : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         animator.SetBool("OnCollide", true);
-        Destroy(gameObject);
+        Invoke("delay", 0.75f);
+        //Destroy(gameObject);
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+
         // Radius of camera to edge
         float size = c.GetComponent<Camera>().orthographicSize * 2f;
         // Check if outside of bounds of camera (X)
@@ -58,5 +61,10 @@ public class MissleProjectile : MonoBehaviour
             Destroy(gameObject);
         }
 
+    }
+
+    void delay()
+    {
+        Destroy(gameObject);
     }
 }
