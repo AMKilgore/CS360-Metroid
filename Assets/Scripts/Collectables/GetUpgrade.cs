@@ -6,6 +6,8 @@ public class GetUpgrade : MonoBehaviour
 {
     // Attributes to all upgrades
     public string upgradeName;
+    // Store audio clip name
+    private string store;
 
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -23,8 +25,20 @@ public class GetUpgrade : MonoBehaviour
                 FindObjectOfType<PlayerMovement>().hasLongBeam = true;
 
             // Play music here and freeze world
+            store = FindObjectOfType<MusicManager>().currentClip;
+            FindObjectOfType<MusicManager>().ChangeMusic("GetUpgrade");
+            FindObjectOfType<PlayerMovement>().isFrozen = true;
+            Invoke("delay", 5.0f);
 
-            GameObject.Destroy(this.gameObject);
+            
         }
+    }
+
+    private void delay()
+    {
+        // Change audio clip back, and return control to player
+        FindObjectOfType<MusicManager>().ChangeMusic(store);
+        FindObjectOfType<PlayerMovement>().isFrozen = false;
+        GameObject.Destroy(this.gameObject);
     }
 }

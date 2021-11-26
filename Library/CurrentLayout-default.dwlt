@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 677, y: 342}
   m_MaxSize: {x: 12002, y: 8042}
   vertical: 0
-  controlID: 101
+  controlID: 96
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_MinSize: {x: 401, y: 342}
   m_MaxSize: {x: 8001, y: 8042}
   vertical: 1
-  controlID: 57
+  controlID: 97
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_MinSize: {x: 401, y: 221}
   m_MaxSize: {x: 8001, y: 4021}
   vertical: 0
-  controlID: 127
+  controlID: 98
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -499,6 +499,7 @@ MonoBehaviour:
     - {fileID: -8181765493466655655, guid: 557bcc0b0708036439d30ca12e7cc7d5, type: 2}
     - {fileID: -9165272976205074865, guid: 6cca7f11004e7a24a9054b2726a38d40, type: 2}
     - {fileID: 1379798250060833192, guid: ba824e5a839ddfc49b9408a61d81e0c2, type: 2}
+    - {fileID: -9029845728996341783, guid: 55b1993ce3eec3d45b9f1860634f3162, type: 2}
     m_ValueSerializationHelper:
     - e00: 0.6857162
       e01: 0
@@ -772,10 +773,26 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
+    - e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: 06af07d2ea69e0547a0784d66206d836, type: 2}
+  m_AnimatorController: {fileID: 9100000, guid: 55b1993ce3eec3d45b9f1860634f3162, type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: -570671101880340639, guid: 06af07d2ea69e0547a0784d66206d836, type: 2}
+  - m_Target: {fileID: -9029845728996341783, guid: 55b1993ce3eec3d45b9f1860634f3162, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -851,22 +868,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Animations/Player/Projectiles/Missles
+    - Assets/Resources/Audio/Music
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Animations/Player/Projectiles/Missles
+  - Assets/Resources/Audio/Music
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Repos\CS360-Metroid
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 129.50012}
-    m_SelectedIDs: 42540000
-    m_LastClickedID: 21570
-    m_ExpandedIDs: 000000007e45000080450000824500008445000086450000884500008a4500008c4500009e450000ac4500005649000000ca9a3b
+    scrollPos: {x: 0, y: 258.99683}
+    m_SelectedIDs: 1c470000
+    m_LastClickedID: 18204
+    m_ExpandedIDs: 000000007e45000080450000824500008445000086450000884500008a4500008c450000aa450000b4450000b84500002246000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -919,8 +936,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 3c450000
-    m_LastClickedInstanceID: 17724
+    m_SelectedInstanceIDs: 1e430000
+    m_LastClickedInstanceID: 17182
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
@@ -1015,9 +1032,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 3c450000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 00fbffff
+      m_SelectedIDs: 24d8ffff
+      m_LastClickedID: -10204
+      m_ExpandedIDs: 66d8ffff9edbffff0ee6ffff72e8ffff26ecffffb2f2ffff6af3ffff46f4fffff2f4ffffaaf5ffffdcf9ffff42fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1226,7 +1243,7 @@ MonoBehaviour:
       y: 21
       width: 712
       height: 400
-    m_Scale: {x: 1, y: 1}
+    m_Scale: {x: 1.2011873, y: 1.2011873}
     m_Translation: {x: 356, y: 200}
     m_MarginLeft: 0
     m_MarginRight: 0
@@ -1234,10 +1251,10 @@ MonoBehaviour:
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -356
-      y: -200
-      width: 712
-      height: 400
+      x: -296.37344
+      y: -166.50194
+      width: 592.7469
+      height: 333.00388
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 890, y: 526.25}

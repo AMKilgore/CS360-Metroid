@@ -35,6 +35,8 @@ public class PlayerMovement : MonoBehaviour
     public int remainingEnergyTanks = 0;
     public int maxMissles = 5;
     public int numMissles = 5;
+    // When upgrade is picked up, freeze player
+    public bool isFrozen = false;
 
     // Shot types
     enum FireMode { normal, missle };
@@ -94,133 +96,142 @@ public class PlayerMovement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        // Look up
-        if (Input.GetKey(KeyCode.UpArrow))
+    {   if (!isFrozen)
         {
-            verticalDirection = 1;
-            animator.SetBool("LookUp", true);
+            // Look up
+            if (Input.GetKey(KeyCode.UpArrow))
+            {
+                verticalDirection = 1;
+                animator.SetBool("LookUp", true);
+            }
+            else
+            {
+                verticalDirection = 0;
+                animator.SetBool("LookUp", false);
+            }
+
+            // Change firemode
+            if (Input.GetKeyUp(KeyCode.A) && canChange)
+            {
+                if (selectedMode == FireMode.normal)
+                {
+                    animator.SetBool("InMissleMode", true);
+                    selectedMode = FireMode.missle;
+                }
+                else
+                {
+                    animator.SetBool("InMissleMode", false);
+                    selectedMode = FireMode.normal;
+                }
+                canChange = false;
+            }
+
+            if (!canChange)
+            {
+                if (changeDelay == 10)
+                {
+                    changeDelay = 0;
+                    canChange = true;
+                }
+                else
+                    ++changeDelay;
+            }
         }
         else
         {
-            verticalDirection = 0;
-            animator.SetBool("LookUp", false);
-        }
-
-        // Change firemode
-        if (Input.GetKeyUp(KeyCode.A) && canChange)
-        {
-            if (selectedMode == FireMode.normal)
-            {
-                animator.SetBool("InMissleMode", true);
-                selectedMode = FireMode.missle;
-            }
-            else
-            {
-                animator.SetBool("InMissleMode", false);
-                selectedMode = FireMode.normal;
-            }
-            canChange = false;
-        }
-
-        if (!canChange)
-        {
-            if (changeDelay == 10)
-            {
-                changeDelay = 0;
-                canChange = true;
-            }
-            else
-                ++changeDelay;
+            r2d.velocity = Vector2.zero;
+            r2d.angularVelocity = 0.0f;
         }
     }
 
     void FixedUpdate()
     {
-        // Horizontal movement, -1 indicates a left movement, 1 indicates a right movement
-        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
+        if (!isFrozen)
         {
-            horizontalDirection = Input.GetKey(KeyCode.LeftArrow) ? -1 : 1;
-            animator.SetFloat("Direction", horizontalDirection);
-        }
-        else
-        {
-            horizontalDirection = 0;
-        }
-
-        if (!animator.GetBool("IsMorphBall") && Input.GetKey(KeyCode.DownArrow) && hasMorphBall)
-        {
-            CreateMorphBall();
-            //animator.SetBool("IsMorphBall", true);
-        }
-
-        // Fire the weapon if the player is grounded
-        if (Input.GetKey(KeyCode.X) && !animator.GetBool("IsFlipJumping") && canFire)
-        {
-            Debug.Log(selectedMode);
-            Fire(selectedMode);
-            canFire = false;
-        }
-
-        // Move horizontally
-        r2d.transform.Translate(Vector2.right * horizontalDirection * horizontalSpeed * Time.deltaTime);
-
-        // Set the walking animation
-        if (horizontalDirection != 0 && isGrounded)
-        {
-            animator.SetFloat("Move X", horizontalDirection);
-            animator.SetBool("IsMoving", true);
-        }
-        // Standing still on the ground
-        else if (horizontalDirection == 0 && isGrounded)
-        {
-            animator.SetBool("IsMoving", false);
-        }
-
-        // Vertical movement
-        if (Input.GetKey(KeyCode.Z) && isGrounded)
-        {
-            r2d.AddForce(Vector2.up * 300.0f);
-        }
-
-        // Logic for playing any jumping animations
-        if (r2d.velocity.y != 0 && isGrounded)
-        {
-            // Falling
-            if (r2d.velocity.y < 0 || horizontalDirection == 0)
+            // Horizontal movement, -1 indicates a left movement, 1 indicates a right movement
+            if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
             {
-                if (animator.GetFloat("Direction") == 1)
-                    animator.SetFloat("Move X", 0.3f);
+                horizontalDirection = Input.GetKey(KeyCode.LeftArrow) ? -1 : 1;
+                animator.SetFloat("Direction", horizontalDirection);
+            }
+            else
+            {
+                horizontalDirection = 0;
+            }
+
+            if (!animator.GetBool("IsMorphBall") && Input.GetKey(KeyCode.DownArrow) && hasMorphBall)
+            {
+                CreateMorphBall();
+                //animator.SetBool("IsMorphBall", true);
+            }
+
+            // Fire the weapon if the player is grounded
+            if (Input.GetKey(KeyCode.X) && !animator.GetBool("IsFlipJumping") && canFire)
+            {
+                Debug.Log(selectedMode);
+                Fire(selectedMode);
+                canFire = false;
+            }
+
+            // Move horizontally
+            r2d.transform.Translate(Vector2.right * horizontalDirection * horizontalSpeed * Time.deltaTime);
+
+            // Set the walking animation
+            if (horizontalDirection != 0 && isGrounded)
+            {
+                animator.SetFloat("Move X", horizontalDirection);
+                animator.SetBool("IsMoving", true);
+            }
+            // Standing still on the ground
+            else if (horizontalDirection == 0 && isGrounded)
+            {
+                animator.SetBool("IsMoving", false);
+            }
+
+            // Vertical movement
+            if (Input.GetKey(KeyCode.Z) && isGrounded)
+            {
+                r2d.AddForce(Vector2.up * 300.0f);
+            }
+
+            // Logic for playing any jumping animations
+            if (r2d.velocity.y != 0 && isGrounded)
+            {
+                // Falling
+                if (r2d.velocity.y < 0 || horizontalDirection == 0)
+                {
+                    if (animator.GetFloat("Direction") == 1)
+                        animator.SetFloat("Move X", 0.3f);
+                    else
+                        animator.SetFloat("Move X", -0.3f);
+                    animator.SetBool("IsFlipJumping", false);
+                }
                 else
-                    animator.SetFloat("Move X", -0.3f);
-                animator.SetBool("IsFlipJumping", false);
+                    animator.SetBool("IsFlipJumping", true);
+                // Activate the jump animation
+                animator.SetBool("IsJumping", true);
+                isGrounded = false;
             }
-            else
-                animator.SetBool("IsFlipJumping", true);
-            // Activate the jump animation
-            animator.SetBool("IsJumping", true);
-            isGrounded = false;
-        }
-        // Ground has been hit
-        if (!isGrounded && r2d.velocity.y == 0)
-        {
-            isGrounded = true;
-            animator.SetBool("IsFlipJumping", false);
-            animator.SetBool("IsJumping", false);
-        }
-
-        // Delay for the missle firing, if the user holds down the fire button, only allow to fire every five frames
-        if (!canFire)
-        {
-            if (fireDelay == 5)
+            // Ground has been hit
+            if (!isGrounded && r2d.velocity.y == 0)
             {
-                fireDelay = 0;
-                canFire = true;
+                isGrounded = true;
+                animator.SetBool("IsFlipJumping", false);
+                animator.SetBool("IsJumping", false);
             }
-            else
-                ++fireDelay;
-        }
 
+            // Delay for the missle firing, if the user holds down the fire button, only allow to fire every five frames
+            if (!canFire)
+            {
+                if (fireDelay == 5)
+                {
+                    fireDelay = 0;
+                    canFire = true;
+                }
+                else
+                    ++fireDelay;
+            }
+        }
     }
 
     void Fire(FireMode mode)

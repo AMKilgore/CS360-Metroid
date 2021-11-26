@@ -87,6 +87,12 @@ public class SceneTracker : MonoBehaviour
                 spawnPoints.Add("rightDoor", new Vector2(-0.5f, -54.86f));
                 break;
             case "BrinstarTower":
+                Debug.Log(GameObject.Find("Music").GetComponent<AudioSource>().clip);
+                if (GameObject.Find("Music").GetComponent<AudioSource>().clip.name != "Brinstar")
+                {
+                    Debug.Log("a");
+                    FindObjectOfType<MusicManager>().ChangeMusic("Brinstar");
+                }
                 adjacentScenes.Add("bottomLeftDoor", "BrinstarLongHallway");
                 spawnPoints.Add("bottomLeftDoor", new Vector2(56.04f, -0.95f));
                 adjacentScenes.Add("middleLeftDoor", "LongBeamHallway");
@@ -95,6 +101,10 @@ public class SceneTracker : MonoBehaviour
                 spawnPoints.Add("topLeftDoor", new Vector2(56.09f, -0.95f));
                 break;
             case "LongBeamHallway":
+                if (FindObjectOfType<MusicManager>().currentClip != "ItemRoom")
+                {
+                    FindObjectOfType<MusicManager>().ChangeMusic("ItemRoom");
+                }
                 adjacentScenes.Add("rightDoor", "BrinstarTower");
                 spawnPoints.Add("rightDoor", new Vector2(-0.96f, 80.06f));
                 adjacentScenes.Add("leftDoor", "LongBeamRoom");
