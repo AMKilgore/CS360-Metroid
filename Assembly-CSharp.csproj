@@ -57,6 +57,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\CameraLockedX.cs" />
+    <Compile Include="Assets\Scripts\ClickTransition.cs" />
+    <Compile Include="Assets\Scripts\Database\TempLoginObject.cs" />
+    <Compile Include="Assets\Scripts\HSTextDisplay.cs" />
+    <Compile Include="Assets\Scripts\SceneSwitch.cs" />
+    <Compile Include="Assets\Scripts\Database\SavedValues.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\SceneTracker.cs" />
     <Compile Include="Assets\Scripts\Player\MorphBallBomb.cs" />
@@ -64,7 +69,9 @@
     <Compile Include="Assets\Scripts\DestructableBlocks.cs" />
     <Compile Include="Assets\Scripts\Collectables\GetUpgrade.cs" />
     <Compile Include="Assets\Scripts\Audio\MusicManager.cs" />
+    <Compile Include="Assets\Scripts\Database\Saving.cs" />
     <Compile Include="Assets\Scripts\Player\MissleProjectile.cs" />
+    <Compile Include="Assets\Scripts\Database\Web.cs" />
     <Compile Include="Assets\Scripts\OpenDoor.cs" />
     <Compile Include="Assets\Scripts\Player\MorphBallMoves.cs" />
     <Compile Include="Assets\Scripts\CameraLockedY.cs" />
@@ -72,6 +79,7 @@
     <Compile Include="Assets\Scripts\Collectables\GetPickup.cs" />
     <Compile Include="Assets\Scripts\Enemies\Zoomer_Movement.cs" />
     <Compile Include="Assets\Scripts\Player\NormalProjectilePhysics.cs" />
+    <None Include="Assets\Resources\DB INSTALL ITEMS\READ.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.17f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

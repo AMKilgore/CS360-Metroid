@@ -7,6 +7,19 @@ using UnityEngine.Tilemaps;
 
 public class PlayerMovement : MonoBehaviour
 {
+    //Additional variables for saving
+    public string username;
+    public string currentScene;
+    //health
+    //energy tanks
+    //missiles
+    //longbeam
+    //morphball
+    public float[] location = new float[2];
+    public int highscore;
+    public bool admin;
+    //
+    
     public Animator animator;
 
     public float horizontalSpeed = 3.4f;
@@ -316,5 +329,33 @@ public class PlayerMovement : MonoBehaviour
         icon.sprite = Resources.Load<Sprite>("UI/" + value.ToString());
     }
 
-    
+
+
+    //Saving & loading
+    //add to button or function
+    public void SavePlayer()
+    {
+        Saving.SavePlayer(this);
+
+    }
+
+    //add to button or function
+    //implement currentScene and position variables
+    public void LoadPlayer(string user)
+    {
+        SavedValues data = Saving.LoadPlayer(user);
+        currentScene = data.currentScene;
+        health = data.health;
+        remainingEnergyTanks = data.remainingEnergyTanks;
+        numMissles = data.numMissles;
+        hasLongBeam = data.hasLongBeam;
+        hasMorphBall = data.hasMorphBall;
+        Vector2 position;
+        position.x = data.location[0];
+        position.y = data.location[1];
+        transform.position = position;
+        admin = data.admin;
+        username = user;
+    }
+
 }
