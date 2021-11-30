@@ -16,6 +16,9 @@ public class MissleProjectile : MonoBehaviour
         animator = GetComponent<Animator>();
         spawnPosition = transform.position;
 
+        // Play sound
+        GameObject.Find("Sounds").GetComponent<SoundManager>().PlaySound("Missle");
+
         // Get camera for deleting when out of view
         c = GameObject.Find("Main Camera X Locked");
         if (c == null)

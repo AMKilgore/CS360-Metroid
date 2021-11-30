@@ -16,6 +16,8 @@ public class MorphBallBomb : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        // Play sound
+        GameObject.Find("Sounds").GetComponent<SoundManager>().PlaySound("Morph Bomb");
         isExploding = false;
         hasLaunched = false;
         hitDestructable = false;
@@ -44,15 +46,13 @@ public class MorphBallBomb : MonoBehaviour
     // Activate the collider to begin dealing damage/launching
     private void OnExplode()
     {
+        // Play sound
+        GameObject.Find("Sounds").GetComponent<SoundManager>().PlaySound("Morph Bomb Explode");
         isExploding = true;
         LaunchPlayer();
         if (hitDestructable)
             FindObjectOfType<DestructableBlocks>().DestroyNearest(this.gameObject);
     }
-
-
-
-
 
     public void LaunchPlayer()
     {
@@ -71,7 +71,6 @@ public class MorphBallBomb : MonoBehaviour
         else if (GameObject.Find("MorphBall") != null || GameObject.Find("MorphBall(Clone)") != null)
         {
             float dist = Vector2.Distance(FindObjectOfType<MorphBallMoves>().transform.position, transform.position);
-            Debug.Log(dist);
             if (dist < 1)
             {
                 float sign = Mathf.Sign(FindObjectOfType<MorphBallMoves>().transform.position.x - transform.position.x);
@@ -84,8 +83,6 @@ public class MorphBallBomb : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-        Debug.Log(collision.name);
         if (collision.name == "Destructable_Tiles")
         {
             hitDestructable = true;

@@ -13,6 +13,9 @@ public class NormalProjectilePhysics : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        // Play sound
+        GameObject.Find("Sounds").GetComponent<SoundManager>().PlaySound("Shoot");
+
         hasLongBeam = FindObjectOfType<PlayerMovement>().hasLongBeam;
         rb2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();

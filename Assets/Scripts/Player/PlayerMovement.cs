@@ -207,6 +207,11 @@ public class PlayerMovement : MonoBehaviour
                 }
                 else
                     animator.SetBool("IsFlipJumping", true);
+
+                // Play jump sound
+                if (r2d.velocity.y > 0)
+                    GameObject.Find("Sounds").GetComponent<SoundManager>().PlaySound("Jump");
+
                 // Activate the jump animation
                 animator.SetBool("IsJumping", true);
                 isGrounded = false;
