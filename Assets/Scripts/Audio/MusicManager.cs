@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class MusicManager : MonoBehaviour
 {
-    private AudioSource audio;
     public string currentClip;
     // Start is called before the first frame update
     void Start()
     {
-         // Check if music is already playing, do not start a new copy of music if it is.
+        // Check if music is already playing, do not start a new copy of music if it is.
         // Hacky method, but it works
         var c = new GameObject("check");
         DontDestroyOnLoad(c);
@@ -29,23 +28,19 @@ public class MusicManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-
-
         DontDestroyOnLoad(transform.gameObject);
-        audio = GetComponent<AudioSource>();
-        currentClip = GetComponent<AudioSource>().clip.name;
     }
 
     public void PlayMusic()
     {
-        if (audio.isPlaying) return;
-        audio.Play();
+        if (this.gameObject.GetComponent<AudioSource>().isPlaying) return;
+        this.gameObject.GetComponent<AudioSource>().Play();
     }
 
     public void ChangeMusic(string name)
     {
-        audio.clip = Resources.Load("Audio/Music/" + name) as AudioClip;
-        currentClip = name;
-        audio.Play();
+        // Change audio and play new clip
+        this.gameObject.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>("Audio/Music/" + name);
+        this.gameObject.GetComponent<AudioSource>().Play();
     }
 }

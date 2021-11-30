@@ -23,10 +23,4 @@ public class DoorInteract : MonoBehaviour
         if (collider == "Player")
             st.FadeToScene(doorLocation);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

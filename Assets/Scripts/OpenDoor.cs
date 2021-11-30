@@ -27,7 +27,7 @@ public class OpenDoor : MonoBehaviour
             collider = "missle";
         }
 
-        if (collider == openType)
+        if (collider == openType || (openType == "normalShot" && collider == "missle"))
         {
             animator.SetInteger("OpenType", 1);
             WaitForAnimationToFinish();

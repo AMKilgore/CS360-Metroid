@@ -168,7 +168,6 @@ public class PlayerMovement : MonoBehaviour
             // Fire the weapon if the player is grounded
             if (Input.GetKey(KeyCode.X) && !animator.GetBool("IsFlipJumping") && canFire)
             {
-                Debug.Log(selectedMode);
                 Fire(selectedMode);
                 canFire = false;
             }
