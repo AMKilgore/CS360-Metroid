@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\SceneTracker.cs" />
     <Compile Include="Assets\Scripts\Player\MorphBallBomb.cs" />
     <Compile Include="Assets\Scripts\DoorInteract.cs" />
+    <Compile Include="Assets\Scripts\Audio\SoundManager.cs" />
     <Compile Include="Assets\Scripts\DestructableBlocks.cs" />
     <Compile Include="Assets\Scripts\Collectables\GetUpgrade.cs" />
     <Compile Include="Assets\Scripts\Audio\MusicManager.cs" />
@@ -79,7 +80,7 @@
     <Compile Include="Assets\Scripts\Collectables\GetPickup.cs" />
     <Compile Include="Assets\Scripts\Enemies\Zoomer_Movement.cs" />
     <Compile Include="Assets\Scripts\Player\NormalProjectilePhysics.cs" />
-    <Compile Include="Assets\Scripts\Audio\SoundManager.cs" />
+    <Compile Include="Assets\Scripts\CustsceneManager.cs" />
     <None Include="Assets\Resources\DB INSTALL ITEMS\READ.txt" />
     <Reference Include="UnityEngine">
       <HintPath>D:/Unity Editors/2020.3.17f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

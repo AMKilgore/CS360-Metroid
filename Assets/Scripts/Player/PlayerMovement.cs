@@ -77,6 +77,8 @@ public class PlayerMovement : MonoBehaviour
         r2d.freezeRotation = true;
         r2d.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         r2d.gravityScale = gravityScale;
+
+        
     }
 
     private void Awake()

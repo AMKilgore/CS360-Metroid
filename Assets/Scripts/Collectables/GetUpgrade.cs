@@ -25,9 +25,11 @@ public class GetUpgrade : MonoBehaviour
                 FindObjectOfType<PlayerMovement>().hasLongBeam = true;
 
             // Play music here and freeze world
-            store = FindObjectOfType<MusicManager>().currentClip;
+            store = GameObject.Find("Music").GetComponent<AudioSource>().clip.name;
+            //FindObjectOfType<MusicManager>().currentClip;
             FindObjectOfType<MusicManager>().ChangeMusic("GetUpgrade");
             FindObjectOfType<PlayerMovement>().isFrozen = true;
+
             Invoke("delay", 5.0f);
 
             
@@ -37,7 +39,8 @@ public class GetUpgrade : MonoBehaviour
     private void delay()
     {
         // Change audio clip back, and return control to player
-        FindObjectOfType<MusicManager>().ChangeMusic(store);
+        Debug.Log(store);
+        GameObject.Find("Music").GetComponent<MusicManager>().ChangeMusic(store);
         FindObjectOfType<PlayerMovement>().isFrozen = false;
         GameObject.Destroy(this.gameObject);
     }
