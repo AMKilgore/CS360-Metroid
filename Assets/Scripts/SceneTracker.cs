@@ -46,8 +46,7 @@ public class SceneTracker : MonoBehaviour
 
     void OnSceneLoaded(Scene s, LoadSceneMode m)
     {
-        GameObject player = GameObject.Find("Player");
-        player.transform.position = spawnPoints[levelToLoad];
+        GameObject.Find("Player").GetComponent<Transform>().position = spawnPoints[levelToLoad];
     }
 
     void GoToMapArea()

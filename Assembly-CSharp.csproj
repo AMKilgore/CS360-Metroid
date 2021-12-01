@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\DestructableBlocks.cs" />
     <Compile Include="Assets\Scripts\Collectables\GetUpgrade.cs" />
     <Compile Include="Assets\Scripts\Audio\MusicManager.cs" />
+    <Compile Include="Assets\Scripts\UIManager.cs" />
     <Compile Include="Assets\Scripts\Database\Saving.cs" />
     <Compile Include="Assets\Scripts\Player\MissleProjectile.cs" />
     <Compile Include="Assets\Scripts\CutsceneManager.cs" />
@@ -81,7 +82,6 @@
     <Compile Include="Assets\Scripts\Collectables\GetPickup.cs" />
     <Compile Include="Assets\Scripts\Enemies\Zoomer_Movement.cs" />
     <Compile Include="Assets\Scripts\Player\NormalProjectilePhysics.cs" />
-    <Compile Include="Assets\Scripts\UIManager.cs" />
     <None Include="Assets\Resources\DB INSTALL ITEMS\READ.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.17f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

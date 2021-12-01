@@ -8,7 +8,7 @@ using UnityEngine;
 //Serializable allows this object to be serialized, i.e. binary serialization.
 //information used originated from: https://www.youtube.com/watch?v=XOjd_qU2Ido
 [System.Serializable]
-public class SavedValues : MonoBehaviour
+public class SavedValues
 {
     public string currentScene;
     public int health;

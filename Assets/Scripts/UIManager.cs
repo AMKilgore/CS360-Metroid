@@ -26,7 +26,6 @@ public class UIManager : MonoBehaviour
                 }
 
                 root.GetComponent<Canvas>().worldCamera = camera;
-                Debug.Log("d");
 
                 Destroy(this.gameObject);
             }
