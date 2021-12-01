@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class GetUpgrade : MonoBehaviour
 {
@@ -31,15 +32,12 @@ public class GetUpgrade : MonoBehaviour
             FindObjectOfType<PlayerMovement>().isFrozen = true;
 
             Invoke("delay", 5.0f);
-
-            
         }
     }
 
     private void delay()
     {
         // Change audio clip back, and return control to player
-        Debug.Log(store);
         GameObject.Find("Music").GetComponent<MusicManager>().ChangeMusic(store);
         FindObjectOfType<PlayerMovement>().isFrozen = false;
         GameObject.Destroy(this.gameObject);

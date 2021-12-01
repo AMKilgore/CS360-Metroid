@@ -23,7 +23,6 @@ public class CutsceneManager : MonoBehaviour
 
     private void IntroDelay()
     {
-        Debug.Log("delay");
         // Change audio clip back, and return control to player
         GameObject.Find("Music").GetComponent<MusicManager>().ChangeMusic("Brinstar");
         FindObjectOfType<PlayerMovement>().isFrozen = false;

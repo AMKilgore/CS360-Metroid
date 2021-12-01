@@ -8,7 +8,7 @@ using UnityEngine;
 //Serializable allows this object to be serialized, i.e. binary serialization.
 //information used originated from: https://www.youtube.com/watch?v=XOjd_qU2Ido
 [System.Serializable]
-public class SavedValues
+public class SavedValues : MonoBehaviour
 {
     public string currentScene;
     public int health;
@@ -33,12 +33,7 @@ public class SavedValues
         numMissles = player.numMissles;
         hasLongBeam = player.hasLongBeam;
         hasMorphBall = player.hasMorphBall;
-        location[0] = player.transform.position.x;
-        location[1] = player.transform.position.y;
         highscore = player.highscore;
         admin = player.admin;
     }
-
-
-
 }

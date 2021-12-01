@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -346,8 +347,6 @@ public class PlayerMovement : MonoBehaviour
     {
         icon.sprite = Resources.Load<Sprite>("UI/" + value.ToString());
     }
-
-
 
     //Saving & loading
     //add to button or function

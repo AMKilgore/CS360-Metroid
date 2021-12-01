@@ -117,5 +117,7 @@ public class SceneTracker : MonoBehaviour
         // Change audio if needed
         if (GameObject.Find("Music").GetComponent<AudioSource>().clip.name != musicName)
             GameObject.Find("Music").GetComponent<MusicManager>().ChangeMusic(musicName);
+        // Save player info
+        FindObjectOfType<PlayerMovement>().SavePlayer();
     }
 }
