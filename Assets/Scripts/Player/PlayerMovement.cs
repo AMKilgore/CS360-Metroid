@@ -78,7 +78,8 @@ public class PlayerMovement : MonoBehaviour
         r2d.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         r2d.gravityScale = gravityScale;
 
-        
+        // Test for intro cutscene, need to find means to implement this
+        //GameObject.Find("CutscenePlayer").GetComponent<CutsceneManager>().IntroCutscene();
     }
 
     private void Awake()
