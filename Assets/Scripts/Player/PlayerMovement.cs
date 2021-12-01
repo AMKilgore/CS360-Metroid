@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     public int highscore;
     public bool admin;
     //
-    
+
     public Animator animator;
 
     public float horizontalSpeed = 3.4f;
@@ -100,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   if (!isFrozen)
+    { if (!isFrozen)
         {
             // Look up
             if (Input.GetKey(KeyCode.UpArrow))
@@ -242,6 +242,12 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Add health updating per enemy here, this is a dummy
+        UpdateHealth(-5);
+    }
+
     void Fire(FireMode mode)
     {
         //$$ Add implementation for the different shot types here, use switches?
@@ -249,7 +255,7 @@ public class PlayerMovement : MonoBehaviour
         bool v = animator.GetBool("LookUp");
 
         if (FireMode.normal == mode && ((hasLongBeam && numberShots < maxShots) || !hasLongBeam))
-        {   
+        {
             GameObject ns;
             if (!v)
                 ns = Instantiate(normalShot, r2d.position + (Vector2.up * 0.40f) + (Vector2.right * d * 0.5f), Quaternion.identity);
@@ -375,4 +381,41 @@ public class PlayerMovement : MonoBehaviour
         username = user;
     }
 
+    #region sprite blinking
+
+    public float spriteBlinkingTimer = 0.0f;
+    public float spriteBlinkingMiniDuration = 0.1f;
+    public float spriteBlinkingTotalTimer = 0.0f;
+    public float spriteBlinkingTotalDuration = 1.0f;
+    public bool startBlinking = false;
+
+    private void SpriteBlinkingEffect()
+    {
+        spriteBlinkingTotalTimer += Time.deltaTime;
+        if (spriteBlinkingTotalTimer >= spriteBlinkingTotalDuration)
+        {
+            startBlinking = false;
+            spriteBlinkingTotalTimer = 0.0f;
+            this.gameObject.GetComponent<SpriteRenderer>().enabled = true;   // according to 
+                                                                             //your sprite
+            return;
+        }
+
+        spriteBlinkingTimer += Time.deltaTime;
+        if (spriteBlinkingTimer >= spriteBlinkingMiniDuration)
+        {
+            spriteBlinkingTimer = 0.0f;
+            if (this.gameObject.GetComponent<SpriteRenderer>().enabled == true)
+            {
+                this.gameObject.GetComponent<SpriteRenderer>().enabled = false;  //make changes
+            }
+            else
+            {
+                this.gameObject.GetComponent<SpriteRenderer>().enabled = true;   //make changes
+            }
+        }
+
+    }
+
+    #endregion
 }
