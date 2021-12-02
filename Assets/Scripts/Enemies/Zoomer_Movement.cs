@@ -9,7 +9,7 @@ public class Zoomer_Movement : MonoBehaviour
 
     public bool MoveRight;
 
-    
+    public 
 
     int n = 2;
 

@@ -10,6 +10,7 @@ public class Skree_Movement : MonoBehaviour
     Rigidbody2D m_Rigidbody;
     Animator animator;
     public float speed = 15;
+    public int health = 2;
     public float horizontalSpeed = 2;
     // Start is called before the first frame update
     void Start()
@@ -78,16 +79,26 @@ public class Skree_Movement : MonoBehaviour
 
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        string other = collision.collider.name.Split('(')[0];
+        if (other == "normalShot")
+            health -= 1;
+        else if (other == "missleRight" || other == "missleLeft" || other == "missleUp")
+            health -= 2;
 
+        if (health == 0)
+            Destroy(gameObject);
+    }
 
     public static float GetDrag(float aVelocityChange, float aFinalVelocity)
- {
-     return aVelocityChange / ((aFinalVelocity + aVelocityChange) * Time.fixedDeltaTime);
- }
- public static float GetDragFromAcceleration(float aAcceleration, float aFinalVelocity)
- {
-     return GetDrag(aAcceleration * Time.fixedDeltaTime, aFinalVelocity);
- }
+    {
+        return aVelocityChange / ((aFinalVelocity + aVelocityChange) * Time.fixedDeltaTime);
+    }
+    public static float GetDragFromAcceleration(float aAcceleration, float aFinalVelocity)
+    {
+        return GetDrag(aAcceleration * Time.fixedDeltaTime, aFinalVelocity);
+    }
 
 IEnumerator waitFunction(){
     yield return new WaitForSeconds(2);

@@ -245,7 +245,13 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Add health updating per enemy here, this is a dummy
-        UpdateHealth(-5);
+        string other = collision.collider.name.Split(' ')[0].Split('(')[0];
+        if (other == "Skree" || other == "Ripper" || other == "Zoomer")
+        {
+            UpdateHealth(-5);
+            //SpriteBlinkingEffect();
+            SpriteBlinkingEffect();
+        }
     }
 
     void Fire(FireMode mode)
@@ -384,9 +390,9 @@ public class PlayerMovement : MonoBehaviour
     #region sprite blinking
 
     public float spriteBlinkingTimer = 0.0f;
-    public float spriteBlinkingMiniDuration = 0.1f;
+    public float spriteBlinkingMiniDuration = 1f;
     public float spriteBlinkingTotalTimer = 0.0f;
-    public float spriteBlinkingTotalDuration = 1.0f;
+    public float spriteBlinkingTotalDuration = 10f;
     public bool startBlinking = false;
 
     private void SpriteBlinkingEffect()
@@ -416,6 +422,5 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
-
     #endregion
 }
