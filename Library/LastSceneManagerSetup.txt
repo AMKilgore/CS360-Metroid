@@ -1,9 +1,5 @@
 sceneSetups:
-<<<<<<< Updated upstream
-- path: Assets/Scenes/TitleScreen.unity
-=======
-- path: Assets/Scenes/Brinstar/BrinstarSecondRoom.unity
->>>>>>> Stashed changes
+- path: Assets/Scenes/Brinstar/BrinstarLongHallway.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
