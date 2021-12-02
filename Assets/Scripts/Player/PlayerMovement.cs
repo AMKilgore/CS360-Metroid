@@ -67,6 +67,11 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (GameObject.Find("SceneTransition").GetComponent<SceneTracker>().sceneName == "BrinstarEntrance")
+        {
+            GameObject.Find("CutscenePlayer").GetComponent<CutsceneManager>().IntroCutscene();
+        }
+
         animator = GetComponent<Animator>();
         r2d = GetComponent<Rigidbody2D>();
         normalShot = (GameObject)Resources.Load("normalShot", typeof(GameObject));

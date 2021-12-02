@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/TitleScreen.unity
+    guid: bbf118ab96279df4988b7e45ebe380c8
+  - enabled: 1
     path: Assets/Scenes/Brinstar/BrinstarEntrance.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
@@ -26,4 +29,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Brinstar/UpperLongHallway.unity
     guid: 6856ccc757bc5274eaf9af277631857b
+  - enabled: 1
+    path: Assets/Scenes/ChooseLogScene.unity
+    guid: 0664fc604a1e617498d2a3624f824bf8
+  - enabled: 1
+    path: Assets/Scenes/CreateUserScreen.unity
+    guid: edf0ac534e259a741bbf1cc76fa7615a
+  - enabled: 1
+    path: Assets/Scenes/ProgressSelectScreen.unity
+    guid: 9d906bdcad98ab3478b1a7c915504bfe
+  - enabled: 1
+    path: Assets/Scenes/SignInScreen.unity
+    guid: 69638a5dfd65e394c9accd139a5dacc5
+  - enabled: 1
+    path: Assets/Scenes/UserOptionScreen.unity
+    guid: a17d00ad7c8f48149a9f6bb9cae93d9a
   m_configObjects: {}

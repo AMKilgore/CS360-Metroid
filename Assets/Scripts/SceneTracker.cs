@@ -10,7 +10,7 @@ public class SceneTracker : MonoBehaviour
 
     private Dictionary<string, string> adjacentScenes = new Dictionary<string, string>();
     private static Dictionary<string, Vector2> spawnPoints = new Dictionary<string, Vector2>();
-    private string sceneName;
+    public string sceneName;
     private string area;
 
     private static string levelToLoad;
