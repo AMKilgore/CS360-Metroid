@@ -160,16 +160,22 @@ MonoBehaviour:
   remainingEnergyTanks: 0
   maxMissles: 5
   numMissles: 5
+  isFrozen: 0
   normalShot: {fileID: 0}
   numberShots: 0
   maxShots: 3
   hasLongBeam: 1
-  hasMorphBall: 0
+  hasMorphBall: 1
   MorphBall: {fileID: 0}
   leftMissle: {fileID: 0}
   rightMissle: {fileID: 0}
   upMissle: {fileID: 0}
   r2d: {fileID: 0}
+  spriteBlinkingTimer: 0
+  spriteBlinkingMiniDuration: 1
+  spriteBlinkingTotalTimer: 0
+  spriteBlinkingTotalDuration: 10
+  startBlinking: 0
 --- !u!95 &6320782787666125188
 Animator:
   serializedVersion: 3

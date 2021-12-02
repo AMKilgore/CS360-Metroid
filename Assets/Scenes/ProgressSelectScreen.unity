@@ -551,7 +551,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2056031683}
+      - m_Target: {fileID: 2056031685}
         m_TargetAssemblyTypeName: SceneSwitch, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 5
@@ -1048,9 +1048,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2056031682}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8100eae39922954499b579f1a4011248, type: 3}
+  m_Script: {fileID: 11500000, guid: fa5745b41dcdf744c9c96e7fcfe46512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TableBase: {fileID: 988394876}
+  Table: {fileID: 886744927}
 --- !u!4 &2056031684
 Transform:
   m_ObjectHideFlags: 0
@@ -1074,8 +1076,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2056031682}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa5745b41dcdf744c9c96e7fcfe46512, type: 3}
+  m_Script: {fileID: 11500000, guid: 8100eae39922954499b579f1a4011248, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TableBase: {fileID: 988394876}
-  Table: {fileID: 886744927}
